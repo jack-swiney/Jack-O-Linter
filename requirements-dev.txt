@@ -1,0 +1,4 @@
+mypy
+pygount
+flake8
+pylint
