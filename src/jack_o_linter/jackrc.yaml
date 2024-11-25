@@ -1,0 +1,367 @@
+# Default Configuration for Jack-O-Linter
+general:
+  max-line-length: 100
+pylint:
+  main:
+    analyse-fallback-blocks: no
+    clear-cache-post-run: no
+    # enable-all-extensions:
+    # errors-only:
+    # exit-zero:
+    extension-pkg-allow-list: []
+    fail-on: []
+    fail-under: 10
+    # from-stdin:
+    ignore:
+      - CVS
+    ignore-paths: []
+    # ignore-patterns: []
+    ignored-modules: []
+    # init-hook:
+    jobs: 1
+    limit-inference-results: 100
+    load-plugins: []
+    persistent: yes
+    prefer-stubs: no
+    recursive: no
+    source-roots: []
+    suggestion-mode: yes
+    unsafe-load-any-extension: no
+
+  basic:
+    argument-naming-style: snake_case
+    attr-naming-style: snake_case
+    bad-names:
+      - foo
+      - bar
+      - baz
+      - toto
+      - tutu
+      - tata
+    class-attribute-naming-style: any
+    class-const-naming-style: UPPER_CASE
+    class-naming-style: PascalCase
+    const-naming-style: UPPER_CASE
+    docstring-min-length: -1
+    function-naming-style: snake_case
+    good-names:
+      - i
+      - j
+      - k
+      - ex
+      - Run
+      - _
+    include-naming-hint: no
+    inlinevar-naming-style: any
+    method-naming-style: snake_case
+    module-naming-style: snake_case
+    no-docstring-rgx: "^_"
+    property-classes:
+      - abc.abstractproperty
+    variable-naming-style: snake_case
+
+  classes:
+    check-protected-access-in-special-methods: no
+    defining-attr-methods:
+      - __init__
+      - __new__
+      - setUp
+      - asyncSetUp
+      - __post_init__
+    exclude-protected:
+      - _asdict
+      - _fields
+      - _replace
+      - _source
+      - _make
+      - os._exit
+    valid-classmethod-first-arg: cls
+    valid-metaclass-classmethod-first-arg: mcs
+
+  design:
+    exclude-too-few-public-methods: []
+    ignored-parents: []
+    max-args: 5
+    max-attributes: 7
+    max-bool-expr: 5
+    max-branches: 12
+    max-locals: 15
+    max-parents: 7
+    max-public-methods: 20
+    max-returns: 6
+    max-statements: 50
+    min-public-methods: 2
+
+  exceptions:
+    overgeneral-exceptions:
+      - builtins.BaseException
+      - builtins.Exception
+
+  format:
+    # expected-line-ending-format:
+    ignore-long-lines: "^\\s*(# )?<https?://\\S+>?"
+    indent-after-paren: 4
+    max-line-length: 100
+    max-module-lines: 1000
+    single-line-class-stmt: no
+    single-line-if-stmt: no
+
+  imports:
+    allow-any-import-level: []
+    allow-reexport-from-package: no
+    allow-wildcard-with-all: no
+    deprecated-modules: []
+    # ext-import-graph:
+    # import-graph:
+    # int-import-graph:
+    known-standard-library: []
+    known-third-party:
+      - enchant
+    preferred-modules: []
+
+  logging:
+    logging-format-style: old
+    logging-modules:
+      - logging
+
+  messages-control:
+    confidence:
+      - HIGH
+      - CONTROL_FLOW
+      - INFERENCE
+      - INFERENCE_FAILURE
+      - UNDEFINED
+    disable:
+      - raw-checker-failed
+      - bad-inline-option
+      - locally-disabled
+      - file-ignored
+      - suppressed-message
+      - useless-suppression
+      - deprecated-pragma
+      - use-symbolic-message-instead
+      - use-implicit-booleaness-not-comparison-to-string
+      - use-implicit-booleaness-not-comparison-to-zero
+    enable: []
+
+  method-args:
+    timeout-methods:
+      - requests.api.delete
+      - requests.api.get
+      - requests.api.head
+      - requests.api.options
+      - requests.api.patch
+      - requests.api.post
+      - requests.api.put
+      - requests.api.request
+
+  miscellaneous:
+    notes:
+      - FIXME
+      - XXX
+      - TODO
+    # notes-rgx:
+
+  refactoring:
+    max-nested-blocks: 5
+    never-returning-functions:
+      - sys.exit
+      - argparse.parse_error
+    suggest-join-with-non-empty-separator: yes
+
+  reports:
+    evaluation: "max(0, 0 if fatal else 10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10))"
+    # msg-template:
+    # output-format:
+    reports: no
+    score: yes
+
+  similarities:
+    ignore-comments: yes
+    ignore-docstrings: yes
+    ignore-imports: yes
+    ignore-signatures: yes
+    min-similarity-lines: 4
+
+  spelling:
+    max-spelling-suggestions: 4
+    # spelling-dict:
+    spelling-ignore-comment-directives:
+      - fmt: on
+      - fmt: off
+      - noqa:
+      - noqa
+      - nosec
+      - isort:skip
+      - mypy:
+    spelling-ignore-words: []
+    # spelling-private-dict-file:
+    spelling-store-unknown-words: no
+
+  string:
+    check-quote-consistency: no
+    check-str-concat-over-line-jumps: no
+
+  typecheck:
+    contextmanager-decorators:
+      - contextlib.contextmanager
+    generated-members: []
+    ignore-none: yes
+    ignore-on-opaque-inference: yes
+    ignored-checks-for-mixins:
+      - no-member
+      - not-async-context-manager
+      - not-context-manager
+      - attribute-defined-outside-init
+    ignored-classes:
+      - optparse.Values
+      - thread._local
+      - _thread._local
+      - argparse.Namespace
+    missing-member-hint: yes
+    missing-member-hint-distance: 1
+    missing-member-max-choices: 1
+    mixin-class-rgx: ".*[Mm]ixin"
+    signature-mutators: []
+
+  variables:
+    additional-builtins: []
+    allow-global-unused-variables: yes
+    allowed-redefined-builtins: []
+    callbacks:
+      - cb_
+      - _cb
+    dummy-variables-rgx: "_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_"
+    ignored-argument-names: "_.*|^ignored_|^unused_"
+    init-import: no
+    redefining-builtins-modules:
+      - six.moves
+      - past.builtins
+      - future.builtins
+      - builtins
+      - io
+
+flake8:
+  # quiet: 1
+  count: false
+  exclude:
+    - .svn
+    - CVS
+    - .bzr
+    - .hg
+    - .git
+    - __pycache__
+    - .tox
+    - .nox
+    - .eggs
+    - "*.egg"
+  extend-exclude: []
+  filename:
+    - "*.py"
+  format: pylint
+  hang_closing: false
+  ignore:
+    - E121
+    - E123
+    - E126
+    - E226
+    - E24
+    - E704
+    - W503
+    - W504
+  extend-ignore: []
+  per-file-ignores: []
+  max-line-length: 100
+  max-doc-length: 80
+  indent-size: 4
+  disable_noqa: false
+  show_source: false
+  statistics: false
+  require-plugins: []
+  enable-extensions: []
+  jobs: auto
+  builtins: []
+  doctests: false
+  max-complexity: 15
+
+pydoclint:
+  style: numpy
+  arg-type-hints-in-docstring: true
+  arg-type-hints-in-signature: true
+  check-arg-order: true
+  skip-checking-short-docstrings: true
+  skip-checking-raises: false
+  allow-init-docstring: false
+  require-return-section-when-returning-nothing: false
+  check-return-types: true
+  require-yield-section-when-yielding-nothing: true
+  check-yield-types: true
+  ignore-underscore-args: true
+  check-class-attributes: true
+  should-document-private-class-attributes: false
+  treat-property-methods-as-class-attributes: false
+  # baseline:
+  generate-baseline: false
+  show-filenames-in-every-violation-message: true
+
+mypy:
+  # Global options
+  python_version: auto
+  platform: auto
+  strict_optional: true
+  namespace_packages: false
+  allow_redefinition: false
+  follow_imports: normal
+  incremental: true
+  cache_dir: .mypy_cache
+  show_traceback: false
+  use_builtins_fixtures: false
+  show_error_codes: false
+  enable_error_code: []
+  disable_error_code: []
+  disable_recursive_aliases: false
+
+  # Disabling specific checks
+  ignore_missing_imports: false
+  follow_imports_for_stubs: false
+  no_implicit_optional: false
+  implicit_reexport: true
+
+  # Reports
+  # lineprecision_report:
+  # linecount_report:
+  # linecoverage_report:
+  # memory_json_report: nll
+  # html_report:
+  # xml_report:
+
+  # Strictness options
+  strict: false
+  check_untyped_defs: false
+  disallow_any_generics: false
+  disallow_untyped_calls: false
+  disallow_untyped_defs: true
+  disallow_incomplete_defs: false
+  disallow_any_unimported: false
+  disallow_any_expr: false
+  disallow_any_decorated: false
+  disallow_any_explicit: false
+  warn_unused_configs: false
+  warn_no_return: true
+  warn_redundant_casts: false
+  warn_unreachable: false
+  warn_unused_ignores: false
+
+  # Plugins and custom types
+  # plugins:
+  # custom_typeshed_dir:
+
+  # Miscellaneous
+  allow_untyped_globals: false
+  allow_subclassing_any: false
+  pretty: false
+  show_column_numbers: false
+  show_error_context: false
+  error_summary: true
+  warn_return_any: false
+  local_partial_types: false

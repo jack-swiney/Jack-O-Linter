@@ -18,9 +18,12 @@ classifiers = [
 ]
 license = {text = "Apache Software License 2.0"}
 dependencies = [
-    "mypy",
     "flake8",
-    "pylint"
+    "mypy",
+    "pydoclint",
+    "pygount",
+    "pylint",
+    "pyyaml",
 ]
 
 [project.optional-dependencies]
