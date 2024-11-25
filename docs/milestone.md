@@ -57,19 +57,19 @@ Similar to PyLint, there's no easy way to parse the output of MyPy to get warnin
 
 ### Additional Static Analysis Tools
 
-- Docstring linter
-- Typehint enforcer
+- [x] Docstring linter (pydoclint)
+- [x] Typehint enforcer (`mypy --disallow-untyped-defs`)
 
 ### Implement Dynamic Analysis Tools
 
-- Following the proposal, implement Dynapyt, Typo, and research additional tools.
+- [ ] Following the proposal, implement Dynapyt, Typo, and research additional tools.
 
 ### Finish the Pipeline
 
-- Add a Command-Line Interface (CLI).
-- Add a common configuration. There are many command-line and config file options for each of the selected tools. I need to create a giant configuration schema with default values that will work for all the tools so users can just put their settings into a ".jackrc" file.
-- Add unit tests
-- Add GitHub actions
+- [x] Add a Command-Line Interface (CLI).
+- [x] Add a common configuration. There are many command-line and config file options for each of the selected tools. I need to create a giant configuration schema with default values that will work for all the tools so users can just put their settings into a ".jackrc" file.
+- [ ] Add unit tests
+- [ ] Add GitHub actions
 
 ## Changes from Proposal
 

@@ -1,4 +1,7 @@
 mypy
 pygount
 flake8
+pydoclint
 pylint
+pyyaml
+types-PyYAML
