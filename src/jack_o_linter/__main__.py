@@ -2,8 +2,61 @@
 import argparse
 import os
 from statistics import fmean
+import sys
+
+from rich.console import Console
+from rich.table import Table
+from rich.progress import Progress, SpinnerColumn, TextColumn
+
 from jack_o_linter import ConfigParser, Flake8, MyPy, PyLint
-from jack_o_linter.errors import JackOLinterError
+
+
+def print_results(console: Console,
+                  mypy: MyPy,
+                  flake8: Flake8,
+                  pylint: PyLint,
+                  threshold: float = 100.0) -> None:
+    """Use Rich to output the Jack-O-Linter results.
+
+    Args:
+        console (Console): Rich console
+        mypy (MyPy): MyPy client.
+        flake8 (Flake8): Flake8 client.
+        pylint (PyLint): PyLint client.
+        threshold (float, optional): Minimum score to pass Jack-O-Linter.
+            Defaults to 100.0.
+    """
+    # Initialize table
+    table = Table(title="Jack-O-Linter Results", show_lines=True)
+
+    # Add columns
+    table.add_column("Tool", style="bold magenta")
+    table.add_column("Score", style="bold green", justify="right")
+    table.add_column("Errors", style="bold red")
+    table.add_column("Warnings", style="bold yellow")
+
+    # Add rows for each tool
+    for row in [mypy, flake8, pylint]:
+        table.add_row(
+            row.__class__.__name__,
+            f"{(row.score or 0):.2f}",
+            "\n".join(row.errors) if row.errors else "No Errors",
+            "\n".join(row.warnings) if row.warnings else "No Warnings"
+        )
+
+    # Print the table to stdout
+    console.print(table)
+
+    # Print the overall score
+    overall_score = fmean(
+        [_score or 0 for _score in [(mypy.score or 0), (flake8.score or 0), (pylint.score or 0)]]
+    )
+    if overall_score < threshold:
+        console.print(f"[bold red]Error: Overall Score ({overall_score:.1f}) "
+                      f"is below the threshold ({threshold}).[/bold red]")
+        sys.exit(1)
+    else:
+        console.print(f"[bold green]Overall Score: {overall_score:.1f}[/bold green]")
 
 
 def main() -> None:
@@ -37,34 +90,32 @@ def main() -> None:
     pylint_config = config.pylint()
     mypy_config = config.mypy()
 
+    # Initialize Rich
+    console = Console()
+
     # Run Jack-O-Linter
     flake8 = Flake8()
     pylint = PyLint()
     mypy = MyPy()
 
-    flake8.run(args.path, config=flake8_config)
-    pylint.run(args.path, rcfile=pylint_config)
-    mypy.run(args.path, config_file=mypy_config)
+    with Progress(SpinnerColumn(),
+                  TextColumn("[bold blue]Running Flake8...[/bold blue]"),
+                  console=console) as progress:
+        progress.add_task("run", total=None)
+        flake8.run(args.path, config=flake8_config)
+    with Progress(SpinnerColumn(),
+                  TextColumn("[bold blue]Running PyLint...[/bold blue]"),
+                  console=console) as progress:
+        progress.add_task("run", total=None)
+        pylint.run(args.path, rcfile=pylint_config)
+    with Progress(SpinnerColumn(),
+                  TextColumn("[bold blue]Running MyPy...[/bold blue]"),
+                  console=console) as progress:
+        progress.add_task("run", total=None)
+        mypy.run(args.path, config_file=mypy_config)
 
-    # Gather the results
-    score = fmean([_score or 0 for _score in [flake8.score, pylint.score, mypy.score]])
-    errors = (flake8.errors or []) + (pylint.errors or []) + (mypy.errors or [])
-    warnings = (flake8.warnings or []) + (pylint.warnings or []) + (mypy.warnings or [])
-
-    if errors:
-        print("*************ERRORS*************")
-        print("\n".join([f"    {err}" for err in errors]) + "\n")
-    if warnings:
-        print("************WARNINGS************")
-        print("\n".join([f"    {warn}" for warn in warnings]) + "\n")
-    print("********************************")
-    print(f"Jack-O-Linter Score: {score:.2f}/100")
-    print("********************************")
-
-    if score < args.fail_under:
-        raise JackOLinterError(
-            f"Score of {score:.2f}/100 is below passing threshold of {args.fail_under}"
-        )
+    # Process the results
+    print_results(console, mypy, flake8, pylint, args.fail_under)
 
 
 if __name__ == "__main__":

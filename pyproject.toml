@@ -24,6 +24,7 @@ dependencies = [
     "pygount",
     "pylint",
     "pyyaml",
+    "rich"
 ]
 
 [project.optional-dependencies]

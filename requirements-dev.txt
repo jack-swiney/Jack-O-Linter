@@ -1,7 +1,9 @@
-mypy
-pygount
+build
 flake8
+mypy
 pydoclint
+pygount
 pylint
 pyyaml
+rich
 types-PyYAML
