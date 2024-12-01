@@ -13,7 +13,7 @@ Static analysis is a key practice in modern software engineering. It enables dev
 
 ### Project Objective
 
-This project aims to investigate the usefulness of popular static analysis tools **Pylint**, **Flake8**, and **MyPy**. These tools aim to solve varying challenges of static analysis in Python. This project then will take the three tools and combines them into an all-in-one static analysis tool called `Jack-O-Linter`. After its implementation, `Jack-O-Linter` will run against a popular Python library `requests`. "Requests is an elegant and simple HTTP library for Python, built for human beings,"[[2]]() created and maintained by the Python Software Foundation. Finally, this project will analyze the results, make recommendations for updates to the `requests` library, and suggest further improvements for `Jack-O-Linter`.
+This project aims to investigate the usefulness of popular static analysis tools **Pylint**, **Flake8**, and **MyPy**. These tools aim to solve varying challenges of static analysis in Python. This project then will take the three tools and combine them into an all-in-one static analysis tool called `Jack-O-Linter`. After its implementation, `Jack-O-Linter` will run against a popular Python library `requests`. "Requests is an elegant and simple HTTP library for Python, built for human beings,"[[2]]() created and maintained by the Python Software Foundation. Finally, this project will analyze the results, make recommendations for updates to the `requests` library, and suggest further improvements for `Jack-O-Linter`.
 
 ### Impacts and Benefits of Static Analysis
 
@@ -283,39 +283,255 @@ options:
 
 ### Overview
 
+This experiment aims to test `Jack-O-Linter` against one of the top-10 most popular python libraries, `requests`. "The request library allows you to send HTTP requests extremely easily. It is widely used for interacting with the web APIs"[[12]]().
+
+`requests` is maintained by the Python Software Foundation (PSF). "The Python Software Foundation is an organization devoted to advancing open source technology related to the Python programming language"[[12]](). They "support and maintain python.org, The Python Package Index, Python Documentation, and many other services the Python Community relies on"[[12]]().
+
+Due to the nature of the Python Software Foundation and their impact on the Python community, as well as the popularity of the `requests` library, it is expected to follow PEP 8 standards thoroughly and be written with minimal static analysis findings. Hopefully, executing `Jack-O-Linter` against will have the following outcomes:
+
+1. Provide insights on how `requests` can be improved.
+1. Highlight any issues with `Jack-O-Linter` or room for improvement.
+
 ### Raw Outcomes
 
-### Adjustments to `Jack-O-Linter` Configuration
+The first portion of the test is to run `Jack-O-Linter` against `requests` by cloning the repository locally and executing `python -m jack_o_linter src/requests` without any custom configuration. This will provide a baseline and show all issues with `requests`, including some the PSF may not care about. The raw results are as follows:
+
+| Static Analysis Tool | Score (Out of 100) | Errors | Warnings |
+| -------------------- | ------------------ | ------ | -------- |
+| `Pylint` | 70.83 | 287 | 207 |
+| `Flake8` | 94.62 | 98 | 101 |
+| `MyPy` | 90.15 | 265 | 14 |
+
+### Adding Configuration from `Requests` Project
+
+The next portion of the test is to run against `requests` with custom configuration, gathered from the project. Inline comments below show the purpose of each setting.
+
+```yaml
+flake8:
+  ignore:
+    # These are explicitly ignored per the requests configuraiton.
+    # See here: https://github.com/psf/requests/blob/main/setup.cfg
+    - E203
+    - E501
+    - W503
+    - W504
+    # According to Pycodestyle's documentation, W505 is not enforced
+    # by default, so this re-disables it.
+    # See here: https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
+    - W505
+    # Requests does not use Pydoclint to lint their docstrings
+    - DOC
+  # The requests configuration also explicitly disables these errors
+  # on a per-file basis
+  per-file-ignores:
+    - src/requests/__init__.py:E402, F401
+    - src/requests/compat.py:E402, F401
+    - tests/compat.py:F401
+  # Flake8 does not run McCabe by default, only if max-complexity is
+  # set. This re-disables it.
+  max-complexity: ""
+
+mypy:
+  # This setting was a stretch goal of Jack-O-Linter: to enforce
+  # type hints in the source code. Most projects, including requests,
+  # do not adhere to this requirement.
+  disallow_untyped_defs: false
+```
+
+The updated results are as follows:
+
+| Static Analysis Tool | Score (Out of 100) | Errors | Warnings |
+| -------------------- | ------------------ | ------ | -------- |
+| `Pylint` | 70.83 | 287 | 207 |
+| `Flake8` | 100| 0 | 0 |
+| `MyPy` | 98.93 | 28 | 3 |
+
+### Recommending Additional Configuration
+
+In addition to the project settings from `requests`, the following settings will help filter out the errors PSF clearly ignores during implementation. In addition, the dependency `types-pyOpenSSL` was installed per the recommendation of `MyPy` which adds type hints for OpenSSL.
+
+```yaml
+pylint:
+  messages-control:
+    disable:
+      # Defaults of Pylint
+      - raw-checker-failed
+      - bad-inline-option
+      - locally-disabled
+      - file-ignored
+      - suppressed-message
+      - useless-suppression
+      - deprecated-pragma
+      - use-symbolic-message-instead
+      - use-implicit-booleaness-not-comparison-to-string
+      - use-implicit-booleaness-not-comparison-to-zero
+      # PSF does not require docstrings for every function and module
+      - missing-function-docstring
+      - missing-module-docstring
+      # PSF does not adhere to Pylint's preferred order of imports
+      - wrong-import-position
+      - wrong-import-order
+      - ungrouped-imports
+      # PSF does not adhere to Pylint's naming conventions (camel case, snake case, etc.)
+      - invalid-name
+      # PSF does not adhere to Pylint's limits for public methods, arguments, branches, etc.
+      - too-many-arguments
+      - too-many-positional-arguments
+      - too-many-lines
+      - too-many-statements
+      - too-many-locals
+      - too-many-branches
+      - too-few-public-methods
+      # PSF ignores line length warnings in Flake8, so ignore them in Pylint as well
+      - line-too-long
+      # Requests has many TODO/FIXMEs that PSF allows in-code
+      - fixme
+      # Requests has many unused imports
+      - unused-import
+      # Pylint recommends to raise custom exceptions from the originals to get the full stack
+      # trace, but PSF does not adhere to this recommendation
+      - raise-missing-from
+      # Requests access protected members of classes they maintain often. They are likely
+      # protected to prevent users from accidentally accessing them, but PSF needs access.
+      - protected-access
+      # Pylint has error messages specific to usage of the requests library to protect
+      # users from unintentional behavior. PSF ignores these errors given the nature.
+      - missing-timeout
+```
+
+The updated results are as follows:
+
+| Static Analysis Tool | Score (Out of 100) | Errors | Warnings |
+| -------------------- | ------------------ | ------ | -------- |
+| `Pylint` | 87.23 | 81 | 52 |
+| `Flake8` | 100| 0 | 0 |
+| `MyPy` | 98.93 | 28 | 3 |
 
 ### Static Analysis Results
 
 #### Flake8
 
+##### Default Configuration:
+
+The majority of errors came from imports, with many cases of unused imports or imports in the wrong location within the Python files. There were also 17 cases of lines over 100 characters long (note that the default for Flake8 is 79 but `Jack-O-Linter` uses 100 by default to match `Pylint`). Warnings were primarily from docstring/comment lines being over 80 characters long. There were also a couple complexity warnings from `McCabe`.
+
+> **NOTE**: The raw output from Flake8 has a few `DOC` error codes on the error side, and a few `F` error codes on the warning side, suggesting that the regular expressions to separate warnings from errors are not working with 100% accuracy.
+
+##### Project Configuration:
+
+The `Requests` project uses "Pre-Commit" to execute various static analysis tools during CI/CD, including `Flake8`. Pre-Commit is "a framework for managing and maintaining multi-language pre-commit hooks"[[13]](). By applying PSF's `Flake8` configuration from the repository, all `Flake8` errors and warnings were eliminated.
+
+##### Recommended Configuration:
+
+No additional recommendations were needed because Flake8 was already at a score of 100.
+
 #### PyLint
 
+##### Default Configuration:
+
+`Pylint` has many varying issues. Import errors and missing function/method docstrings are among the most frequent. There are also cases of non-conforming variable names, functions with too many statementso or branches, functions with too many arguments, line-length issues, and issues of variables or modules missing an expected member. Among the warnings are warnings of improperly named variables (i.e. reusing the name of an import for a variable later), accessing protected members, "FIXME"/"TODO" comments left in the code, and warnings about handling exceptions.
+
+##### Project Configuration:
+
+The `Requests` project does not use `Pylint`, so there were no updates from the default, resulting in the same issues as above.
+
+##### Recommended Configuration:
+
+`Pylint` found hundreds of errors and warnings in requests. Pylint has error and warning codes specific to users who use the requests library, so some of the messages like `missing-timeout` or `protected-access` were removed due to the nature of PSF bending the rules to write the library itself. The library was also missing many function and module docstrings, which are not a requirement of other linters like `Flake8`. `Requests` also handles errors themselves rather than using the `from` keyword to raise an error using the stacktrace of another. According to `Pylint` standards, the correct order of imports is "Python standard library imports", "third-party imports", then "first-party imports"[[15]](). Finally, `requests` does not adhere to Pylint's standards for maintainability standards like lines of code in a file, branches in a function, number of arguments for a function, etc.
+
+By ignoring all of these errors (along with the default ignores), The score for `Pylint` increased dramatically from 70.83 to 87.23
+
 #### MyPy
+
+##### Default Configuration:
+
+`MyPy` errors were mostly from missing type annotations. `Jack-O-Linter` requires type annotations in all functions by default as a personal preference of the project owner. The second largest sources of error were type incompatibilities, assigning the null `NoneType` to variables. `MyPy` expects the type of variables to be type-hinted as `Optional[<some-type>]` if they can be null. The other errors included a few imports of C libraries without type stubs (*.pyi files) or reusing variable names. Warnings were primarily from functions without return type annotations (or false positives like "Hint: python3 -m pip install types-pyOpenSSL")
+
+##### Project Configuration:
+
+`Jack-O-Linter` defaults the `MyPy` setting for `disallow_untyped_defs` to true. This was a stretch goal to force the Python code under test to use type hints. According to Pouya Hallaj, "Type hints serve as documentation for function parameters and return types, making it easier for developers to understand and use APIs. Instead of relying on external documentation or guessing the expected types, developers can refer to the type hints directly in the code. This results in better API design, as the expected input and output types are explicitly defined"[[14]]().
+
+However, most Python projects do not adhere to this requirement. By disabling this check, the `MyPy` score significantly improved, going from 90.15 to 98.93.
+
+##### Recommended Configuration:
+
+Installing the recommended type hint dependencies increased the score for MyPy from 98.13 to 99.00.
 
 ### Future Work and Recommendations
 
 #### `Requests`
 
+While some of the errors and warnings from `Requests` can be safely ignored by PSF, there are a few that were ignored in the recommended settings that serve a valuable purpose in static analysis:
+
+1. The standards like `max-line-length`, `too-many-arguments`, `too-many-statements`, etc. should not be ignored. These standards are to improve readability and maintainability of the software. Minimizing the amount of code in a function, method, or file promotes better organization of code and keeps developers accountable for the scope of each function, method, and file.
+1. `Requests` does not follow `Pylint`'s naming conventions for functions, variables, or constants. While they may seem arbitrary, naming conventions are important in Python due to it's dynamic nature. Well-named variables help provide information about the variable, since types aren't always provided. Naming styles (uppercase, camel case, snake case, etc.) help distinguish between variables, constants, and classes.
+
+There are still over 100 errors and warnings from `Pylint`, despite ignoring a large list of error codes. These are errors that are unsafe to ignore, and should be prioritized by PSF to resolve.
+
+1. The `redefined-argument-from-local` error is raised several times. This error occurs when a local variable in a function or method is redefining an argument. This makes the code harder to read and opens the door for potential bugs from unintended behavior.
+1. The `no-member` error is raised over 30 times. This error occurs when attempting to access a function or variable of a class that does not exist. 24 of these errors occur because `requests` defines a custom class that extends the builtin Python dictionary which dynamically creates an attribute for each key in the dictionary. The other 10 are from the `pypy` library which dynamically adds the attribute `pypy_version_info` to the standard library `sys`. The `no-member` error should not be blanket-ignored, by adding in-line comments to ignore these errors where they occur would be helpful for improving the linter's score.
+1. The import errors suggest `Pylint` is unable to lint a C library or the developer requirements.txt file is missing dependencies.
+
+Finally, there are various errors with minimal impacts:
+
+1. The `consider-using-f-string` suggests users should use the Python 3.x f-string to format strings. Some repositories use the Python 2.x formatting syntax which is still acceptable and has not been deprecated.
+1. Return statement errors like `inconsistent-return-statement` and `too-many-returns` signal a readability issue in the code, but nothing more. For example, if a function returns an optional string, it should explicitly return a string or explicitly return a null.
+
+Warnings from `Pylint`, which have a much lower impact, include the following:
+
+1. There are 20 `redefining-builtin` errors which all come from `requests` creating variables to point to builtins with the same name. This seems redundant, but perhaps there was a reason for this.
+1. There are 10 `redefining-outer-name` errors. Each of these comes from a function argument where an import ("outer name" variable) is intended to be the function argument. Assuming developers understand variable scope in Python, these errors could be ignored.
+1. There are 10 occurrences of `unused-argument` and `unused-variable` which should be cleaned up.
+
 #### `Jack-O-Linter`
+
+1. **Minimize False Positives**: The paper "A Billion Lines of Code Later" emphasized the importance of minimizing false positives, suggesting that they severely impact user trust[[3]](). The regular expression to find warnings in the `MyPy` results creates false positives and needs to be adjusted to filter out the literal notes and only provide the warnings.
+1. **Fix Flake8 Error/Warning Distinction**: The regular expressions used to separate warnings from errors had some inaccuracies. Though the warnings and errors were still being reported, this suggests there could be additional false positives or false negatives by improperly handling the output of `Flake8`.
+1. **Create Common Configuration**: There are several settings of the static analysis tools that could be made common. E.g. `Pylint` and `Flake8` both have settings for the maximum length of a line. These types of settings should be set from a common configuration rather than forcing users to set them in both places. This would have minimized the amount of confiugration required for `Requests`.
+1. **Improve Scoring Algorithm**: The scores from `Pylint`, `Flake8`, and `MyPy` were drastically different, even when the number of errors and warnings was similar across the different static analysis tools. `Pylint` is the only tool that provides its own score metric, so it should be set as the baseline. The other two tools' scores were inflated in comparison, so the algorithm for those should be tweaked to be proportional to `Pylint`.
 
 ## VI. Conclusion
 
+The development and evaluation of `Jack-O-Linter` have highlighted both the potential and challenges of creating a unified static analysis tool for Python. By combining `Pylint`, `Flake8`, and `MyPy`, `Jack-O-Linter` provides developers with a comprehensive platform to improve code quality, enforce coding standards, and identify bugs efficiently. The experimental application to the `Requests` library revealed key insights into both the effectiveness of the tool and the current limitations of popular Python static analysis practices.
+
+`Jack-O-Linter` demonstrated the ability to consolidate outputs and configurations, improving usability and scalability for large projects. However, discrepancies in scoring, false positives, and limitations in tool integrations underline the need for further refinement. Addressing these issues, particularly harmonizing configurations across tools and improving output accuracy, will enhance user trust and adoption.
+
+For the `Requests` library, the results emphasized areas for improvement, including adherence to naming conventions, managing complexity in functions, and addressing type ambiguity. Incorporating such recommendations will ensure greater maintainability and readability in codebases, aligning with Python's principles of simplicity and clarity.
+
+Ultimately, `Jack-O-Linter` has proven to be a valuable asset for Python developers, streamlining static analysis processes. With continued enhancements, it has the potential to set a new standard for multi-tool static analysis, empowering teams to deliver cleaner, more reliable code while maintaining flexibility to adapt to specific project requirements.
+
 # Bibliography
 
-- [[1]](https://www.tiobe.com/tiobe-index/) TIOBE Index for November 2024
-- [[2]](https://requests.readthedocs.io/en/latest/) Requests read-the-docs
-- [[3]](https://dl.acm.org/doi/pdf/10.1145/1646353.1646374) A few billion lines of code later
-- [[4]](https://epub.fh-joanneum.at/obvfhjhs/content/titleinfo/9603356/full.pdf) Code Analysis and Data Collection Using Python Static Analysis Tools and SQLite
-- [[5]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9610640) Unambiguity of Python Language Elements for Static Analysis
-- [[6]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5590990) Mapping of Dynamic Language Constructs into Static Abstract Syntax Trees
-- [[7]](https://ceur-ws.org/Vol-2508/paper-gul.pdf) Survey on Static Analysis Tools of Python Programs
-- [[8]](https://scan.coverity.com/) Coverity Scan
-- [[9]](https://pylint.readthedocs.io/en/stable/user_guide/messages/messages_overview.html) Pylint messages overview
-- [[10]](https://flake8.pycqa.org/en/latest/user/options.html) Flake8 Configuration
-- [[11]](https://mypy.readthedocs.io/en/stable/config_file.html) MyPy Configuration
+[1] TIOBE, “TIOBE Index | TIOBE - The Software Quality Company,” Tiobe.com, 2024. https://www.tiobe.com/tiobe-index/ (accessed Dec. 01, 2024).
+
+[2] “Requests: HTTP for HumansTM — Requests 2.32.3 documentation,” Readthedocs.io, 2024. https://requests.readthedocs.io/en/stable/ (accessed Dec. 01, 2024).
+
+[3] A. Bessey et al., “A few billion lines of code later,” Communications of the ACM, vol. 53, no. 2, pp. 66–75, Feb. 2010, doi: https://doi.org/10.1145/1646353.1646374.
+
+[4] “Code Analysis and Data Collection using Python Static Analysis Tools and SQLite.” Available: https://epub.fh-joanneum.at/obvfhjhs/content/titleinfo/9603356/full.pdf
+
+[5] B. Nagy, T. Brunner, and Zoltan Porkolab, “Unambiguity of Python Language Elements for Static Analysis,” Sep. 2021, doi: https://doi.org/10.1109/scam52516.2021.00017.
+
+[6] J. Misek and F. Zavoral, “Mapping of Dynamic Language Constructs into Static Abstract Syntax Trees,” pp. 625–630, Aug. 2010, doi: https://doi.org/10.1109/icis.2010.100.
+
+[7] H. Gulabovska and Z. Porkoláb, “Survey on Static Analysis Tools of Python Programs.” Available: https://ceur-ws.org/Vol-2508/paper-gul.pdf
+
+[8] “Coverity Scan - Static Analysis,” scan.coverity.com. https://scan.coverity.com/
+
+[9] “Messages overview - Pylint 3.3.2 documentation,” Readthedocs.io, 2024. https://pylint.readthedocs.io/en/stable/user_guide/messages/messages_overview.html (accessed Dec. 01, 2024).
+
+[10] “Full Listing of Options and Their Descriptions — flake8 7.1.0 documentation,” Pycqa.org, 2020. https://flake8.pycqa.org/en/latest/user/options.html (accessed Dec. 01, 2024).
+
+[11] “The mypy configuration file - mypy 1.13.0 documentation,” Readthedocs.io, 2022. https://mypy.readthedocs.io/en/stable/config_file.html (accessed Dec. 01, 2024).
+
+[12] “Top 20 Python Libraries To Know in 2024,” GeeksforGeeks, Jan. 26, 2024. https://www.geeksforgeeks.org/python-libraries-to-know/ (accessed Dec. 01, 2024).
+
+[13] “pre-commit,” pre-commit.com. https://pre-commit.com/ (accessed Dec. 01, 2024).
+
+[14] Pouya Hallaj, “Mastering Type Hints in Python | By Pouya Hallaj | Medium,” Medium, Jun. 03, 2023. https://medium.com/@pouyahallaj/type-hints-in-python-why-you-should-embrace-static-typing-11cddf7036c2 (accessed Dec. 01, 2024).
+
+[15] “wrong-import-order / C0411 - Pylint 3.3.2 documentation,” Readthedocs.io, 2024. https://pylint.readthedocs.io/en/stable/user_guide/messages/convention/wrong-import-order.html (accessed Dec. 01, 2024).
+
 
 <!-- TODO regex = "\[\[\d\]\]" -->
 <!-- TODO fix inline citations -->
