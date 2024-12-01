@@ -1,6 +1,5 @@
 # Default Configuration for Jack-O-Linter
-general:
-  max-line-length: 100
+
 pylint:
   main:
     analyse-fallback-blocks: no

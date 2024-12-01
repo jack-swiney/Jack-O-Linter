@@ -1,0 +1,949 @@
+⠋ Running Flake8...
+⠸ Running PyLint...
+⠋ Running MyPy...
+                                                                                     Jack-O-Linter Results
+┏━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Tool   ┃ Score ┃ Errors                                                                               ┃ Warnings                                                                            ┃
+┡━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ MyPy   │ 90.15 │ src/requests/hooks.py:15: error: Function is missing a return type annotation        │ src/requests/cookies.py:20: note: See                                               │
+│        │       │ src/requests/hooks.py:22: error: Function is missing a type annotation               │ https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports             │
+│        │       │ src/requests/compat.py:30: error: Function is missing a return type annotation       │ src/requests/auth.py:116: note: Use "-> None" if function does not return a value   │
+│        │       │ src/requests/compat.py:64: error: Name "json" already defined (by an import)         │ src/requests/models.py:334: note: Use "-> None" if function does not return a value │
+│        │       │ src/requests/compat.py:69: error: Incompatible import of "JSONDecodeError" (imported │ src/requests/models.py:658: note: Use "-> None" if function does not return a value │
+│        │       │ name has type "type", local name has type "type")                                    │ src/requests/models.py:997: note: Use "-> None" if function does not return a value │
+│        │       │ src/requests/compat.py:93: error: Module "urllib.request" has no attribute           │ src/requests/models.py:1026: note: Use "-> None" if function does not return a      │
+│        │       │ "proxy_bypass_environment"                                                           │ value                                                                               │
+│        │       │ src/requests/structures.py:40: error: Function is missing a type annotation          │ src/requests/adapters.py:140: note: Use "-> None" if function does not return a     │
+│        │       │ src/requests/structures.py:46: error: Function is missing a type annotation          │ value                                                                               │
+│        │       │ src/requests/structures.py:51: error: Function is missing a type annotation          │ src/requests/adapters.py:162: note: Use "-> None" if function does not return a     │
+│        │       │ src/requests/structures.py:54: error: Function is missing a type annotation          │ value                                                                               │
+│        │       │ src/requests/structures.py:57: error: Function is missing a type annotation          │ src/requests/adapters.py:536: note: Use "-> None" if function does not return a     │
+│        │       │ src/requests/structures.py:60: error: Function is missing a type annotation          │ value                                                                               │
+│        │       │ src/requests/structures.py:63: error: Function is missing a return type annotation   │ src/requests/sessions.py:390: note: Use "-> None" if function does not return a     │
+│        │       │ src/requests/structures.py:67: error: Function is missing a type annotation          │ value                                                                               │
+│        │       │ src/requests/structures.py:76: error: Function is missing a return type annotation   │ src/requests/sessions.py:794: note: Use "-> None" if function does not return a     │
+│        │       │ src/requests/structures.py:79: error: Function is missing a type annotation          │ value                                                                               │
+│        │       │ src/requests/structures.py:86: error: Function is missing a type annotation          │ src/requests/help.py:31: note: Hint: "python3 -m pip install types-pyOpenSSL"       │
+│        │       │ src/requests/structures.py:90: error: Function is missing a type annotation          │ src/requests/help.py:31: note: (or run "mypy --install-types" to install all        │
+│        │       │ src/requests/structures.py:93: error: Function is missing a type annotation          │ missing stub packages)                                                              │
+│        │       │ src/requests/structures.py:98: error: Function is missing a type annotation          │ src/requests/help.py:128: note: Use "-> None" if function does not return a value   │
+│        │       │ src/requests/exceptions.py:17: error: Function is missing a type annotation          │                                                                                     │
+│        │       │ src/requests/exceptions.py:34: error: Function is missing a type annotation          │                                                                                     │
+│        │       │ src/requests/exceptions.py:44: error: Function is missing a return type annotation   │                                                                                     │
+│        │       │ src/requests/_internal_utils.py:25: error: Function is missing a type annotation     │                                                                                     │
+│        │       │ src/requests/_internal_utils.py:38: error: Function is missing a type annotation     │                                                                                     │
+│        │       │ src/requests/status_codes.py:109: error: Function is missing a return type           │                                                                                     │
+│        │       │ annotation                                                                           │                                                                                     │
+│        │       │ src/requests/status_codes.py:116: error: Function is missing a type annotation       │                                                                                     │
+│        │       │ src/requests/cookies.py:20: error: Cannot find implementation or library stub for    │                                                                                     │
+│        │       │ module named "dummy_threading"                                                       │                                                                                     │
+│        │       │ src/requests/cookies.py:20: error: Name "threading" already defined (by an import)   │                                                                                     │
+│        │       │ src/requests/cookies.py:35: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/cookies.py:40: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:43: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:46: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:49: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:69: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:72: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/cookies.py:75: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/cookies.py:78: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/cookies.py:84: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/cookies.py:87: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:91: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:95: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:99: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/cookies.py:110: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:117: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:120: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:124: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:140: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:151: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:194: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:206: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:225: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:234: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:242: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:251: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:259: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:268: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:277: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:285: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:293: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:306: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:321: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:327: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:336: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:343: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:349: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:358: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:366: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:386: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:415: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:422: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:428: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:435: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/cookies.py:440: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:455: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:492: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:521: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/cookies.py:542: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/utils.py:127: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:136: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:207: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:264: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:271: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:309: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:321: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:348: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:378: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:410: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:445: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:470: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:481: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:492: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:517: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:542: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:567: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:584: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:594: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:639: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:663: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:685: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:700: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:711: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:722: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:747: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:768: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:777: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:829: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:841: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:867: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:894: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:903: error: Function is missing a return type annotation       │                                                                                     │
+│        │       │ src/requests/utils.py:917: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:960: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:992: error: Function is missing a type annotation              │                                                                                     │
+│        │       │ src/requests/utils.py:1021: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/utils.py:1037: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/utils.py:1048: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/utils.py:1067: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/utils.py:1084: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/auth.py:25: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:72: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:79: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:83: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:91: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:94: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/auth.py:102: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:110: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:116: error: Function is missing a return type annotation        │                                                                                     │
+│        │       │ src/requests/auth.py:126: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:145: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:153: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:161: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:169: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:236: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:241: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:285: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:305: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/auth.py:313: error: Function is missing a type annotation               │                                                                                     │
+│        │       │ src/requests/models.py:72: error: "LookupDict" has no attribute "moved"              │                                                                                     │
+│        │       │ src/requests/models.py:73: error: "LookupDict" has no attribute "found"              │                                                                                     │
+│        │       │ src/requests/models.py:74: error: "LookupDict" has no attribute "other"              │                                                                                     │
+│        │       │ src/requests/models.py:75: error: "LookupDict" has no attribute "temporary_redirect" │                                                                                     │
+│        │       │ src/requests/models.py:76: error: "LookupDict" has no attribute "permanent_redirect" │                                                                                     │
+│        │       │ src/requests/models.py:86: error: Function is missing a return type annotation       │                                                                                     │
+│        │       │ src/requests/models.py:107: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:137: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:207: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:218: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:258: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:292: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:295: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:334: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:351: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:379: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:382: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:393: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:400: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:409: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:483: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:494: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:572: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:588: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:610: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:630: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:658: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:705: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:708: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:711: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:719: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:727: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:730: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:740: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:750: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:755: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:770: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:777: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:785: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:790: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:799: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:816: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:857: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:891: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:910: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:947: error: Function is missing a type annotation             │                                                                                     │
+│        │       │ src/requests/models.py:981: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:997: error: Function is missing a return type annotation      │                                                                                     │
+│        │       │ src/requests/models.py:1026: error: Function is missing a return type annotation     │                                                                                     │
+│        │       │ src/requests/adapters.py:63: error: Name "SOCKSProxyManager" already defined         │                                                                                     │
+│        │       │ (possibly by an import)                                                              │                                                                                     │
+│        │       │ src/requests/adapters.py:63: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/adapters.py:87: error: Incompatible types in assignment (expression has │                                                                                     │
+│        │       │ type "None", variable has type "SSLContext")                                         │                                                                                     │
+│        │       │ src/requests/adapters.py:95: error: Invalid type comment or annotation               │                                                                                     │
+│        │       │ src/requests/adapters.py:117: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:119: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:120: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:123: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:124: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:128: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "str", target has type "SSLContext")                                        │                                                                                     │
+│        │       │ src/requests/adapters.py:140: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/adapters.py:143: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:162: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/adapters.py:202: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:224: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/adapters.py:227: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:240: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:266: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:304: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:359: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:396: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:446: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:495: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:536: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/adapters.py:546: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:578: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:592: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/adapters.py:613: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:61: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/sessions.py:91: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/sessions.py:107: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:127: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:159: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:282: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:302: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:333: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:390: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/sessions.py:451: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:454: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:457: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:500: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:593: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:604: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:615: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:626: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:639: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:651: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:663: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:673: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:750: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:781: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:794: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/sessions.py:799: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:810: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/sessions.py:814: error: Function is missing a type annotation           │                                                                                     │
+│        │       │ src/requests/sessions.py:819: error: Function is missing a return type annotation    │                                                                                     │
+│        │       │ src/requests/api.py:14: error: Function is missing a type annotation                 │                                                                                     │
+│        │       │ src/requests/api.py:62: error: Function is missing a type annotation                 │                                                                                     │
+│        │       │ src/requests/api.py:76: error: Function is missing a type annotation                 │                                                                                     │
+│        │       │ src/requests/api.py:88: error: Function is missing a type annotation                 │                                                                                     │
+│        │       │ src/requests/api.py:103: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/api.py:118: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/api.py:133: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/api.py:148: error: Function is missing a type annotation                │                                                                                     │
+│        │       │ src/requests/__init__.py:50: error: Incompatible types in assignment (expression has │                                                                                     │
+│        │       │ type "None", variable has type "str")                                                │                                                                                     │
+│        │       │ src/requests/__init__.py:55: error: Incompatible types in assignment (expression has │                                                                                     │
+│        │       │ type "None", variable has type "str")                                                │                                                                                     │
+│        │       │ src/requests/__init__.py:58: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/__init__.py:93: error: Function is missing a type annotation            │                                                                                     │
+│        │       │ src/requests/__init__.py:128: error: Incompatible types in assignment (expression    │                                                                                     │
+│        │       │ has type "None", variable has type Module)                                           │                                                                                     │
+│        │       │ src/requests/help.py:16: error: Incompatible types in assignment (expression has     │                                                                                     │
+│        │       │ type "None", variable has type Module)                                               │                                                                                     │
+│        │       │ src/requests/help.py:21: error: Incompatible types in assignment (expression has     │                                                                                     │
+│        │       │ type "None", variable has type Module)                                               │                                                                                     │
+│        │       │ src/requests/help.py:26: error: Incompatible types in assignment (expression has     │                                                                                     │
+│        │       │ type "None", variable has type Module)                                               │                                                                                     │
+│        │       │ src/requests/help.py:30: error: Incompatible import of "cryptography" (imported name │                                                                                     │
+│        │       │ has type Module, local name has type "object")                                       │                                                                                     │
+│        │       │ src/requests/help.py:31: error: Library stubs not installed for "OpenSSL"            │                                                                                     │
+│        │       │ src/requests/help.py:31: error: Name "OpenSSL" already defined on line 27            │                                                                                     │
+│        │       │ src/requests/help.py:34: error: Function is missing a return type annotation         │                                                                                     │
+│        │       │ src/requests/help.py:69: error: Function is missing a return type annotation         │                                                                                     │
+│        │       │ src/requests/help.py:128: error: Function is missing a return type annotation        │                                                                                     │
+├────────┼───────┼──────────────────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────┤
+│ Flake8 │ 94.62 │ src/requests/__init__.py:143: [E402] module level import not at top of file          │ src/requests/__init__.py:165: [F401] '.exceptions.ConnectionError' imported but     │
+│        │       │ src/requests/__init__.py:148: [E402] module level import not at top of file          │ unused                                                                              │
+│        │       │ src/requests/__init__.py:149: [E402] module level import not at top of file          │ src/requests/__init__.py:165: [F401] '.exceptions.ConnectTimeout' imported but      │
+│        │       │ src/requests/__init__.py:151: [F401] '.packages' imported but unused                 │ unused                                                                              │
+│        │       │ src/requests/__init__.py:151: [F401] '.utils' imported but unused                    │ src/requests/adapters.py:148: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:151: [E402] module level import not at top of file          │ src/requests/adapters.py:154: [W505] doc line too long (95 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__author__' imported but unused   │ src/requests/adapters.py:155: [W505] doc line too long (86 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__author_email__' imported but    │ src/requests/adapters.py:158: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ unused                                                                               │ src/requests/adapters.py:252: [W505] doc line too long (88 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__build__' imported but unused    │ src/requests/adapters.py:274: [W505] doc line too long (89 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__cake__' imported but unused     │ src/requests/adapters.py:311: [W505] doc line too long (84 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__copyright__' imported but       │ src/requests/adapters.py:312: [W505] doc line too long (86 > 80 characters)         │
+│        │       │ unused                                                                               │ src/requests/adapters.py:319: [W505] doc line too long (100 > 80 characters)        │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__description__' imported but     │ src/requests/adapters.py:321: [W505] doc line too long (98 > 80 characters)         │
+│        │       │ unused                                                                               │ src/requests/adapters.py:365: [W505] doc line too long (97 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__license__' imported but unused  │ src/requests/adapters.py:407: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__title__' imported but unused    │ src/requests/adapters.py:431: [W505] doc line too long (81 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__url__' imported but unused      │ src/requests/adapters.py:449: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [F401] '.__version__.__version__' imported but unused  │ src/requests/adapters.py:504: [W505] doc line too long (95 > 80 characters)         │
+│        │       │ src/requests/__init__.py:152: [E402] module level import not at top of file          │ src/requests/adapters.py:556: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.delete' imported but unused               │ src/requests/adapters.py:557: [W505] doc line too long (83 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.get' imported but unused                  │ src/requests/adapters.py:587: [W505] doc line too long (89 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.head' imported but unused                 │ src/requests/adapters.py:613: [C901] 'HTTPAdapter.send' is too complex (21)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.options' imported but unused              │ src/requests/adapters.py:618: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.patch' imported but unused                │ src/requests/adapters.py:624: [W505] doc line too long (85 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.post' imported but unused                 │ src/requests/adapters.py:625: [W505] doc line too long (81 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.put' imported but unused                  │ src/requests/adapters.py:628: [W505] doc line too long (82 > 80 characters)         │
+│        │       │ src/requests/__init__.py:164: [F401] '.api.request' imported but unused              │ src/requests/api.py:17: [W505] doc line too long (139 > 80 characters)              │
+│        │       │ src/requests/__init__.py:164: [E402] module level import not at top of file          │ src/requests/api.py:23: [W505] doc line too long (106 > 80 characters)              │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.ConnectionError' imported but      │ src/requests/api.py:24: [W505] doc line too long (92 > 80 characters)               │
+│        │       │ unused                                                                               │ src/requests/api.py:25: [W505] doc line too long (90 > 80 characters)               │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.ConnectTimeout' imported but       │ src/requests/api.py:26: [W505] doc line too long (133 > 80 characters)              │
+│        │       │ unused                                                                               │ src/requests/api.py:27: [W505] doc line too long (116 > 80 characters)              │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.HTTPError' imported but unused     │ src/requests/api.py:28: [W505] doc line too long (116 > 80 characters)              │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.JSONDecodeError' imported but      │ src/requests/api.py:29: [W505] doc line too long (123 > 80 characters)              │
+│        │       │ unused                                                                               │ src/requests/api.py:32: [W505] doc line too long (83 > 80 characters)               │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.ReadTimeout' imported but unused   │ src/requests/api.py:36: [W505] doc line too long (136 > 80 characters)              │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.RequestException' imported but     │ src/requests/api.py:38: [W505] doc line too long (83 > 80 characters)               │
+│        │       │ unused                                                                               │ src/requests/api.py:39: [W505] doc line too long (91 > 80 characters)               │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.Timeout' imported but unused       │ src/requests/api.py:40: [W505] doc line too long (86 > 80 characters)               │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.TooManyRedirects' imported but     │ src/requests/api.py:42: [W505] doc line too long (96 > 80 characters)               │
+│        │       │ unused                                                                               │ src/requests/api.py:43: [W505] doc line too long (107 > 80 characters)              │
+│        │       │ src/requests/__init__.py:165: [F401] '.exceptions.URLRequired' imported but unused   │ src/requests/api.py:109: [W505] doc line too long (106 > 80 characters)             │
+│        │       │ src/requests/__init__.py:165: [E402] module level import not at top of file          │ src/requests/api.py:124: [W505] doc line too long (106 > 80 characters)             │
+│        │       │ src/requests/__init__.py:177: [F401] '.models.PreparedRequest' imported but unused   │ src/requests/api.py:139: [W505] doc line too long (106 > 80 characters)             │
+│        │       │ src/requests/__init__.py:177: [F401] '.models.Request' imported but unused           │ src/requests/auth.py:126: [C901] 'HTTPDigestAuth.build_digest_header' is too        │
+│        │       │ src/requests/__init__.py:177: [F401] '.models.Response' imported but unused          │ complex (24)                                                                        │
+│        │       │ src/requests/__init__.py:177: [E402] module level import not at top of file          │ src/requests/compat.py:73: [F401] 'collections.abc.Callable' imported but unused    │
+│        │       │ src/requests/__init__.py:178: [F401] '.sessions.Session' imported but unused         │ src/requests/cookies.py:26: [W505] doc line too long (87 > 80 characters)           │
+│        │       │ src/requests/__init__.py:178: [F401] '.sessions.session' imported but unused         │ src/requests/cookies.py:27: [W505] doc line too long (82 > 80 characters)           │
+│        │       │ src/requests/__init__.py:178: [E402] module level import not at top of file          │ src/requests/cookies.py:30: [W505] doc line too long (86 > 80 characters)           │
+│        │       │ src/requests/__init__.py:179: [F401] '.status_codes.codes' imported but unused       │ src/requests/cookies.py:31: [W505] doc line too long (84 > 80 characters)           │
+│        │       │ src/requests/__init__.py:179: [E402] module level import not at top of file          │ src/requests/cookies.py:79: [W505] doc line too long (91 > 80 characters)           │
+│        │       │ src/requests/api.py:17: [E501] line too long (139 > 100 characters)                  │ src/requests/cookies.py:110: [DOC301] Class `MockResponse`: __init__() should not   │
+│        │       │ src/requests/api.py:23: [E501] line too long (106 > 100 characters)                  │ have a docstring; please combine it with the docstring of the class                 │
+│        │       │ src/requests/api.py:26: [E501] line too long (133 > 100 characters)                  │ src/requests/cookies.py:142: [W505] doc line too long (83 > 80 characters)          │
+│        │       │ src/requests/api.py:27: [E501] line too long (116 > 100 characters)                  │ src/requests/cookies.py:172: [W505] doc line too long (84 > 80 characters)          │
+│        │       │ src/requests/api.py:28: [E501] line too long (116 > 100 characters)                  │ src/requests/cookies.py:404: [W505] doc line too long (88 > 80 characters)          │
+│        │       │ src/requests/api.py:29: [E501] line too long (123 > 100 characters)                  │ src/requests/cookies.py:408: [W505] doc line too long (86 > 80 characters)          │
+│        │       │ src/requests/api.py:36: [E501] line too long (136 > 100 characters)                  │ src/requests/exceptions.py:17: [DOC301] Class `RequestException`: __init__() should │
+│        │       │ src/requests/api.py:43: [E501] line too long (107 > 100 characters)                  │ not have a docstring; please combine it with the docstring of the class             │
+│        │       │ src/requests/api.py:109: [E501] line too long (106 > 100 characters)                 │ src/requests/exceptions.py:34: [DOC301] Class `JSONDecodeError`: __init__() should  │
+│        │       │ src/requests/api.py:124: [E501] line too long (106 > 100 characters)                 │ not have a docstring; please combine it with the docstring of the class             │
+│        │       │ src/requests/api.py:139: [E501] line too long (106 > 100 characters)                 │ src/requests/exceptions.py:147: [W505] doc line too long (84 > 80 characters)       │
+│        │       │ src/requests/compat.py:64: [F401] 'json' imported but unused                         │ src/requests/models.py:11: [W505] doc line too long (89 > 80 characters)            │
+│        │       │ src/requests/compat.py:69: [F401] 'json.JSONDecodeError' imported but unused         │ src/requests/models.py:143: [W505] doc line too long (96 > 80 characters)           │
+│        │       │ src/requests/compat.py:72: [F401] 'collections.OrderedDict' imported but unused      │ src/requests/models.py:233: [W505] doc line too long (94 > 80 characters)           │
+│        │       │ src/requests/compat.py:72: [E402] module level import not at top of file             │ src/requests/models.py:238: [W505] doc line too long (81 > 80 characters)           │
+│        │       │ src/requests/compat.py:73: [F401] 'collections.abc.Callable' imported but unused     │ src/requests/models.py:242: [W505] doc line too long (96 > 80 characters)           │
+│        │       │ src/requests/compat.py:73: [F401] 'collections.abc.Mapping' imported but unused      │ src/requests/models.py:247: [W505] doc line too long (81 > 80 characters)           │
+│        │       │ src/requests/compat.py:73: [F401] 'collections.abc.MutableMapping' imported but      │ src/requests/models.py:296: [W505] doc line too long (102 > 80 characters)          │
+│        │       │ unused                                                                               │ src/requests/models.py:409: [C901] 'PreparedRequest.prepare_url' is too complex     │
+│        │       │ src/requests/compat.py:73: [E402] module level import not at top of file             │ (17)                                                                                │
+│        │       │ src/requests/compat.py:74: [F401] 'http.cookiejar as cookielib' imported but unused  │ src/requests/models.py:446: [W505] doc line too long (86 > 80 characters)           │
+│        │       │ src/requests/compat.py:74: [E402] module level import not at top of file             │ src/requests/models.py:447: [W505] doc line too long (87 > 80 characters)           │
+│        │       │ src/requests/compat.py:75: [F401] 'http.cookies.Morsel' imported but unused          │ src/requests/models.py:448: [W505] doc line too long (89 > 80 characters)           │
+│        │       │ src/requests/compat.py:75: [E402] module level import not at top of file             │ src/requests/models.py:449: [W505] doc line too long (87 > 80 characters)           │
+│        │       │ src/requests/compat.py:76: [F401] 'io.StringIO' imported but unused                  │ src/requests/models.py:494: [C901] 'PreparedRequest.prepare_body' is too complex    │
+│        │       │ src/requests/compat.py:76: [E402] module level import not at top of file             │ (17)                                                                                │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.quote' imported but unused           │ src/requests/models.py:684: [W505] doc line too long (82 > 80 characters)           │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.quote_plus' imported but unused      │ src/requests/models.py:786: [W505] doc line too long (98 > 80 characters)           │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.unquote' imported but unused         │ src/requests/models.py:791: [W505] doc line too long (93 > 80 characters)           │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.unquote_plus' imported but unused    │ src/requests/models.py:951: [W505] doc line too long (82 > 80 characters)           │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urldefrag' imported but unused       │ src/requests/models.py:958: [W505] doc line too long (88 > 80 characters)           │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urlencode' imported but unused       │ src/requests/sessions.py:128: [W505] doc line too long (84 > 80 characters)         │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urljoin' imported but unused         │ src/requests/sessions.py:203: [W505] doc line too long (88 > 80 characters)         │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urlparse' imported but unused        │ src/requests/sessions.py:212: [W505] doc line too long (88 > 80 characters)         │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urlsplit' imported but unused        │ src/requests/sessions.py:400: [W505] doc line too long (83 > 80 characters)         │
+│        │       │ src/requests/compat.py:81: [F401] 'urllib.parse.urlunparse' imported but unused      │ src/requests/sessions.py:401: [W505] doc line too long (81 > 80 characters)         │
+│        │       │ src/requests/compat.py:81: [E402] module level import not at top of file             │ src/requests/sessions.py:417: [W505] doc line too long (86 > 80 characters)         │
+│        │       │ src/requests/compat.py:93: [F401] 'urllib.request.getproxies' imported but unused    │ src/requests/sessions.py:550: [W505] doc line too long (95 > 80 characters)         │
+│        │       │ src/requests/compat.py:93: [F401] 'urllib.request.getproxies_environment' imported   │ src/requests/sessions.py:551: [W505] doc line too long (86 > 80 characters)         │
+│        │       │ but unused                                                                           │ src/requests/sessions.py:632: [W505] doc line too long (81 > 80 characters)         │
+│        │       │ src/requests/compat.py:93: [F401] 'urllib.request.parse_http_list' imported but      │ src/requests/sessions.py:736: [W505] doc line too long (100 > 80 characters)        │
+│        │       │ unused                                                                               │ src/requests/sessions.py:819: [DOC201] Function `session` does not have a return    │
+│        │       │ src/requests/compat.py:93: [F401] 'urllib.request.proxy_bypass' imported but unused  │ section in docstring                                                                │
+│        │       │ src/requests/compat.py:93: [F401] 'urllib.request.proxy_bypass_environment' imported │ src/requests/sessions.py:826: [W505] doc line too long (88 > 80 characters)         │
+│        │       │ but unused                                                                           │ src/requests/utils.py:101: [W505] doc line too long (87 > 80 characters)            │
+│        │       │ src/requests/compat.py:93: [E402] module level import not at top of file             │ src/requests/utils.py:136: [C901] 'super_len' is too complex (16)                   │
+│        │       │ src/requests/exceptions.py:17: [DOC301] Class `RequestException`: __init__() should  │ src/requests/utils.py:155: [W505] doc line too long (88 > 80 characters)            │
+│        │       │ not have a docstring; please combine it with the docstring of the class              │ src/requests/utils.py:254: [W505] doc line too long (83 > 80 characters)            │
+│        │       │ src/requests/exceptions.py:34: [DOC301] Class `JSONDecodeError`: __init__() should   │ src/requests/utils.py:255: [W505] doc line too long (81 > 80 characters)            │
+│        │       │ not have a docstring; please combine it with the docstring of the class              │ src/requests/utils.py:280: [W505] doc line too long (84 > 80 characters)            │
+│        │       │ src/requests/models.py:296: [E501] line too long (102 > 100 characters)              │ src/requests/utils.py:286: [W505] doc line too long (128 > 80 characters)           │
+│        │       │ src/requests/sessions.py:819: [DOC201] Function `session` does not have a return     │ src/requests/utils.py:287: [W505] doc line too long (105 > 80 characters)           │
+│        │       │ section in docstring                                                                 │ src/requests/utils.py:302: [W505] doc line too long (117 > 80 characters)           │
+│        │       │ src/requests/utils.py:286: [E501] line too long (128 > 100 characters)               │ src/requests/utils.py:563: [W505] doc line too long (106 > 80 characters)           │
+│        │       │ src/requests/utils.py:287: [E501] line too long (105 > 100 characters)               │ src/requests/utils.py:768: [C901] 'should_bypass_proxies' is too complex (16)       │
+│        │       │ src/requests/utils.py:302: [E501] line too long (117 > 100 characters)               │ src/requests/utils.py:802: [W505] doc line too long (96 > 80 characters)            │
+│        │       │ src/requests/utils.py:537: [E203] whitespace before ':'                              │ src/requests/utils.py:920: [W505] doc line too long (118 > 80 characters)           │
+│        │       │ src/requests/utils.py:563: [E501] line too long (106 > 100 characters)               │                                                                                     │
+│        │       │ src/requests/utils.py:590: [E203] whitespace before ':'                              │                                                                                     │
+│        │       │ src/requests/utils.py:920: [E501] line too long (118 > 100 characters)               │                                                                                     │
+├────────┼───────┼──────────────────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────┤
+│ PyLint │ 70.83 │ src/requests/__init__.py:58:0: C0116: Missing function or method docstring           │ src/requests/__init__.py:165:0: W0622: Redefining built-in 'ConnectionError'        │
+│        │       │ (missing-function-docstring)                                                         │ (redefined-builtin)                                                                 │
+│        │       │ src/requests/__init__.py:101:18: C0209: Formatting a regular string which could be   │ src/requests/__init__.py:165:0: W0622: Redefining built-in 'ConnectionError'        │
+│        │       │ an f-string (consider-using-f-string)                                                │ (redefined-builtin)                                                                 │
+│        │       │ src/requests/__init__.py:114:8: C0209: Formatting a regular string which could be an │ src/requests/__init__.py:58:41: W0621: Redefining name 'chardet_version' from outer │
+│        │       │ f-string (consider-using-f-string)                                                   │ scope (line 53) (redefined-outer-name)                                              │
+│        │       │ src/requests/__init__.py:143:0: C0413: Import "from urllib3.exceptions import        │ src/requests/__init__.py:58:58: W0621: Redefining name 'charset_normalizer_version' │
+│        │       │ DependencyWarning" should be placed at the top of the module (wrong-import-position) │ from outer scope (line 48) (redefined-outer-name)                                   │
+│        │       │ src/requests/__init__.py:143:0: C0413: Import "from urllib3.exceptions import        │ src/requests/__init__.py:67:18: W0621: Redefining name 'patch' from outer scope     │
+│        │       │ DependencyWarning" should be placed at the top of the module (wrong-import-position) │ (line 164) (redefined-outer-name)                                                   │
+│        │       │ src/requests/__init__.py:148:0: C0413: Import "import logging" should be placed at   │ src/requests/__init__.py:58:41: W0621: Redefining name 'chardet_version' from outer │
+│        │       │ the top of the module (wrong-import-position)                                        │ scope (line 53) (redefined-outer-name)                                              │
+│        │       │ src/requests/__init__.py:148:0: C0413: Import "import logging" should be placed at   │ src/requests/__init__.py:58:58: W0621: Redefining name 'charset_normalizer_version' │
+│        │       │ the top of the module (wrong-import-position)                                        │ from outer scope (line 48) (redefined-outer-name)                                   │
+│        │       │ src/requests/__init__.py:149:0: C0413: Import "from logging import NullHandler"      │ src/requests/__init__.py:67:18: W0621: Redefining name 'patch' from outer scope     │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ (line 164) (redefined-outer-name)                                                   │
+│        │       │ src/requests/__init__.py:149:0: C0413: Import "from logging import NullHandler"      │ src/requests/__init__.py:93:24: W0621: Redefining name 'cryptography_version' from  │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ outer scope (line 136) (redefined-outer-name)                                       │
+│        │       │ src/requests/__init__.py:151:0: C0413: Import "from . import packages, utils" should │ src/requests/__init__.py:93:24: W0621: Redefining name 'cryptography_version' from  │
+│        │       │ be placed at the top of the module (wrong-import-position)                           │ outer scope (line 136) (redefined-outer-name)                                       │
+│        │       │ src/requests/__init__.py:151:0: C0413: Import "from . import packages, utils" should │ src/requests/cookies.py:131:56: W0212: Access to a protected member                 │
+│        │       │ be placed at the top of the module (wrong-import-position)                           │ _original_response of a client class (protected-access)                             │
+│        │       │ src/requests/__init__.py:152:0: C0413: Import "from .__version__ import __author__,  │ src/requests/cookies.py:136:23: W0212: Access to a protected member                 │
+│        │       │ __author_email__, __build__, __cake__, __copyright__, __description__, __license__,  │ _original_response of a client class (protected-access)                             │
+│        │       │ __title__, __url__, __version__" should be placed at the top of the module           │ src/requests/cookies.py:194:4: W0237: Parameter 'key' has been renamed to 'name' in │
+│        │       │ (wrong-import-position)                                                              │ overriding 'RequestsCookieJar.get' method (arguments-renamed)                       │
+│        │       │ src/requests/__init__.py:152:0: C0413: Import "from .__version__ import __author__,  │ src/requests/cookies.py:358:4: W0221: Number of parameters was 1 in                 │
+│        │       │ __author_email__, __build__, __cake__, __copyright__, __description__, __license__,  │ 'MutableMapping.update' and is now 2 in overriding 'RequestsCookieJar.update'       │
+│        │       │ __title__, __url__, __version__" should be placed at the top of the module           │ method (arguments-differ)                                                           │
+│        │       │ (wrong-import-position)                                                              │ src/requests/cookies.py:358:4: W0221: Variadics removed in overriding               │
+│        │       │ src/requests/__init__.py:164:0: C0413: Import "from .api import delete, get, head,   │ 'RequestsCookieJar.update' method (arguments-differ)                                │
+│        │       │ options, patch, post, put, request" should be placed at the top of the module        │ src/requests/cookies.py:500:12: W0707: Consider explicitly re-raising using 'except │
+│        │       │ (wrong-import-position)                                                              │ ValueError as exc' and 'raise TypeError(f"max-age: {morsel['max-age']} must be      │
+│        │       │ src/requests/__init__.py:164:0: C0413: Import "from .api import delete, get, head,   │ integer") from exc' (raise-missing-from)                                            │
+│        │       │ options, patch, post, put, request" should be placed at the top of the module        │ src/requests/cookies.py:500:12: W0707: Consider explicitly re-raising using 'except │
+│        │       │ (wrong-import-position)                                                              │ ValueError as exc' and 'raise TypeError(f"max-age: {morsel['max-age']} must be      │
+│        │       │ src/requests/__init__.py:165:0: C0413: Import "from .exceptions import               │ integer") from exc' (raise-missing-from)                                            │
+│        │       │ ConnectionError, ConnectTimeout, FileModeWarning, HTTPError, JSONDecodeError,        │ src/requests/auth.py:181:9: W0511: XXX not implemented yet (fixme)                  │
+│        │       │ ReadTimeout, RequestException, Timeout, TooManyRedirects, URLRequired" should be     │ src/requests/auth.py:215:13: W0511: XXX handle auth-int. (fixme)                    │
+│        │       │ placed at the top of the module (wrong-import-position)                              │ src/requests/auth.py:220:9: W0511: XXX should the partial digests be encoded too?   │
+│        │       │ src/requests/__init__.py:165:0: C0413: Import "from .exceptions import               │ (fixme)                                                                             │
+│        │       │ ConnectionError, ConnectTimeout, FileModeWarning, HTTPError, JSONDecodeError,        │ src/requests/auth.py:181:9: W0511: XXX not implemented yet (fixme)                  │
+│        │       │ ReadTimeout, RequestException, Timeout, TooManyRedirects, URLRequired" should be     │ src/requests/auth.py:215:13: W0511: XXX handle auth-int. (fixme)                    │
+│        │       │ placed at the top of the module (wrong-import-position)                              │ src/requests/auth.py:220:9: W0511: XXX should the partial digests be encoded too?   │
+│        │       │ src/requests/__init__.py:177:0: C0413: Import "from .models import PreparedRequest,  │ (fixme)                                                                             │
+│        │       │ Request, Response" should be placed at the top of the module (wrong-import-position) │ src/requests/auth.py:17:0: W0622: Redefining built-in 'str' (redefined-builtin)     │
+│        │       │ src/requests/__init__.py:177:0: C0413: Import "from .models import PreparedRequest,  │ src/requests/auth.py:17:0: W0622: Redefining built-in 'str' (redefined-builtin)     │
+│        │       │ Request, Response" should be placed at the top of the module (wrong-import-position) │ src/requests/auth.py:236:0: W0613: Unused argument 'kwargs' (unused-argument)       │
+│        │       │ src/requests/__init__.py:178:0: C0413: Import "from .sessions import Session,        │ src/requests/auth.py:236:0: W0613: Unused argument 'kwargs' (unused-argument)       │
+│        │       │ session" should be placed at the top of the module (wrong-import-position)           │ src/requests/auth.py:267:12: W0104: Statement seems to have no effect               │
+│        │       │ src/requests/__init__.py:178:0: C0413: Import "from .sessions import Session,        │ (pointless-statement)                                                               │
+│        │       │ session" should be placed at the top of the module (wrong-import-position)           │ src/requests/auth.py:270:35: W0212: Access to a protected member _cookies of a      │
+│        │       │ src/requests/__init__.py:179:0: C0413: Import "from .status_codes import codes"      │ client class (protected-access)                                                     │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/auth.py:271:33: W0212: Access to a protected member _cookies of a      │
+│        │       │ src/requests/__init__.py:179:0: C0413: Import "from .status_codes import codes"      │ client class (protected-access)                                                     │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/sessions.py:240:35: W0212: Access to a protected member _cookies of a  │
+│        │       │ src/requests/__init__.py:143:0: C0411: third party import                            │ client class (protected-access)                                                     │
+│        │       │ "urllib3.exceptions.DependencyWarning" should be placed before local import          │ src/requests/sessions.py:241:26: W0212: Access to a protected member _cookies of a  │
+│        │       │ "exceptions.RequestsDependencyWarning" (wrong-import-order)                          │ client class (protected-access)                                                     │
+│        │       │ src/requests/__init__.py:148:0: C0411: standard import "logging" should be placed    │ src/requests/sessions.py:242:45: W0212: Access to a protected member _cookies of a  │
+│        │       │ before third party imports "urllib3", "urllib3.exceptions.DependencyWarning" and     │ client class (protected-access)                                                     │
+│        │       │ local import "exceptions.RequestsDependencyWarning" (wrong-import-order)             │ src/requests/sessions.py:251:25: W0212: Access to a protected member _body_position │
+│        │       │ src/requests/__init__.py:149:0: C0411: standard import "logging.NullHandler" should  │ of a client class (protected-access)                                                │
+│        │       │ be placed before third party imports "urllib3",                                      │ src/requests/sessions.py:739:16: W0212: Access to a protected member _next of a     │
+│        │       │ "urllib3.exceptions.DependencyWarning" and local import                              │ client class (protected-access)                                                     │
+│        │       │ "exceptions.RequestsDependencyWarning" (wrong-import-order)                          │ src/requests/sessions.py:746:12: W0104: Statement seems to have no effect           │
+│        │       │ src/requests/__init__.py:143:0: C0412: Imports from package urllib3 are not grouped  │ (pointless-statement)                                                               │
+│        │       │ (ungrouped-imports)                                                                  │ src/requests/sessions.py:33:0: W0611: Unused REDIRECT_STATI imported from models    │
+│        │       │ src/requests/__init__.py:143:0: C0411: third party import                            │ (unused-import)                                                                     │
+│        │       │ "urllib3.exceptions.DependencyWarning" should be placed before local import          │ src/requests/sessions.py:41:0: W0611: Unused should_bypass_proxies imported from    │
+│        │       │ "exceptions.RequestsDependencyWarning" (wrong-import-order)                          │ utils (unused-import)                                                               │
+│        │       │ src/requests/__init__.py:148:0: C0411: standard import "logging" should be placed    │ src/requests/sessions.py:33:0: W0611: Unused REDIRECT_STATI imported from models    │
+│        │       │ before third party imports "urllib3", "urllib3.exceptions.DependencyWarning" and     │ (unused-import)                                                                     │
+│        │       │ local import "exceptions.RequestsDependencyWarning" (wrong-import-order)             │ src/requests/sessions.py:41:0: W0611: Unused should_bypass_proxies imported from    │
+│        │       │ src/requests/__init__.py:149:0: C0411: standard import "logging.NullHandler" should  │ utils (unused-import)                                                               │
+│        │       │ be placed before third party imports "urllib3",                                      │ src/requests/hooks.py:19:1: W0511: TODO: response is the only one (fixme)           │
+│        │       │ "urllib3.exceptions.DependencyWarning" and local import                              │ src/requests/hooks.py:19:1: W0511: TODO: response is the only one (fixme)           │
+│        │       │ "exceptions.RequestsDependencyWarning" (wrong-import-order)                          │ src/requests/compat.py:102:0: W0622: Redefining built-in 'str' (redefined-builtin)  │
+│        │       │ src/requests/__init__.py:143:0: C0412: Imports from package urllib3 are not grouped  │ src/requests/compat.py:103:0: W0622: Redefining built-in 'bytes'                    │
+│        │       │ (ungrouped-imports)                                                                  │ (redefined-builtin)                                                                 │
+│        │       │ src/requests/cookies.py:40:4: C0116: Missing function or method docstring            │ src/requests/compat.py:102:0: W0622: Redefining built-in 'str' (redefined-builtin)  │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:103:0: W0622: Redefining built-in 'bytes'                    │
+│        │       │ src/requests/cookies.py:43:4: C0116: Missing function or method docstring            │ (redefined-builtin)                                                                 │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:32:4: W0621: Redefining name 'chardet' from outer scope      │
+│        │       │ src/requests/cookies.py:46:4: C0116: Missing function or method docstring            │ (line 42) (redefined-outer-name)                                                    │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:32:4: W0621: Redefining name 'chardet' from outer scope      │
+│        │       │ src/requests/cookies.py:49:4: C0116: Missing function or method docstring            │ (line 42) (redefined-outer-name)                                                    │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:102:0: W0127: Assigning the same variable 'str' to itself    │
+│        │       │ src/requests/cookies.py:69:4: C0116: Missing function or method docstring            │ (self-assigning-variable)                                                           │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:103:0: W0127: Assigning the same variable 'bytes' to itself  │
+│        │       │ src/requests/cookies.py:72:4: C0116: Missing function or method docstring            │ (self-assigning-variable)                                                           │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:60:4: W0611: Unused simplejson imported as json              │
+│        │       │ src/requests/cookies.py:75:4: C0116: Missing function or method docstring            │ (unused-import)                                                                     │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:64:4: W0611: Unused import json (unused-import)              │
+│        │       │ src/requests/cookies.py:84:4: C0116: Missing function or method docstring            │ src/requests/compat.py:67:4: W0611: Unused JSONDecodeError imported from simplejson │
+│        │       │ (missing-function-docstring)                                                         │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:87:4: C0116: Missing function or method docstring            │ src/requests/compat.py:72:0: W0611: Unused OrderedDict imported from collections    │
+│        │       │ (missing-function-docstring)                                                         │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:91:4: C0116: Missing function or method docstring            │ src/requests/compat.py:73:0: W0611: Unused Callable imported from collections.abc   │
+│        │       │ (missing-function-docstring)                                                         │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:95:4: C0116: Missing function or method docstring            │ src/requests/compat.py:73:0: W0611: Unused Mapping imported from collections.abc    │
+│        │       │ (missing-function-docstring)                                                         │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:99:4: C0116: Missing function or method docstring            │ src/requests/compat.py:73:0: W0611: Unused MutableMapping imported from             │
+│        │       │ (missing-function-docstring)                                                         │ collections.abc (unused-import)                                                     │
+│        │       │ src/requests/cookies.py:117:4: C0116: Missing function or method docstring           │ src/requests/compat.py:74:0: W0611: Unused cookiejar imported from http as          │
+│        │       │ (missing-function-docstring)                                                         │ cookielib (unused-import)                                                           │
+│        │       │ src/requests/cookies.py:120:4: C0116: Missing function or method docstring           │ src/requests/compat.py:75:0: W0611: Unused Morsel imported from http.cookies        │
+│        │       │ (missing-function-docstring)                                                         │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:166:8: R1704: Redefining argument with the local name        │ src/requests/compat.py:76:0: W0611: Unused StringIO imported from io                │
+│        │       │ 'domain' (redefined-argument-from-local)                                             │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:166:16: R1704: Redefining argument with the local name       │ src/requests/compat.py:81:0: W0611: Unused quote imported from urllib.parse         │
+│        │       │ 'path' (redefined-argument-from-local)                                               │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:166:22: R1704: Redefining argument with the local name       │ src/requests/compat.py:81:0: W0611: Unused quote_plus imported from urllib.parse    │
+│        │       │ 'name' (redefined-argument-from-local)                                               │ (unused-import)                                                                     │
+│        │       │ src/requests/cookies.py:206:4: R1710: Either all return statements in a function     │ src/requests/compat.py:81:0: W0611: Unused unquote imported from urllib.parse       │
+│        │       │ should return an expression, or none of them should.                                 │ (unused-import)                                                                     │
+│        │       │ (inconsistent-return-statements)                                                     │ src/requests/compat.py:81:0: W0611: Unused unquote_plus imported from urllib.parse  │
+│        │       │ src/requests/cookies.py:398:8: C0103: Variable name "toReturn" doesn't conform to    │ (unused-import)                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │ src/requests/compat.py:81:0: W0611: Unused urldefrag imported from urllib.parse     │
+│        │       │ src/requests/cookies.py:409:24: C0103: Variable name "toReturn" doesn't conform to   │ (unused-import)                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │ src/requests/compat.py:81:0: W0611: Unused urlencode imported from urllib.parse     │
+│        │       │ src/requests/auth.py:37:12: C0209: Formatting a regular string which could be an     │ (unused-import)                                                                     │
+│        │       │ f-string (consider-using-f-string)                                                   │ src/requests/compat.py:81:0: W0611: Unused urljoin imported from urllib.parse       │
+│        │       │ src/requests/auth.py:47:12: C0209: Formatting a regular string which could be an     │ (unused-import)                                                                     │
+│        │       │ f-string (consider-using-f-string)                                                   │ src/requests/compat.py:81:0: W0611: Unused urlparse imported from urllib.parse      │
+│        │       │ src/requests/auth.py:69:0: R0903: Too few public methods (1/2)                       │ (unused-import)                                                                     │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/compat.py:81:0: W0611: Unused urlsplit imported from urllib.parse      │
+│        │       │ src/requests/auth.py:69:0: R0903: Too few public methods (1/2)                       │ (unused-import)                                                                     │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/compat.py:81:0: W0611: Unused urlunparse imported from urllib.parse    │
+│        │       │ src/requests/auth.py:99:0: R0903: Too few public methods (1/2)                       │ (unused-import)                                                                     │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/compat.py:93:0: W0611: Unused getproxies imported from urllib.request  │
+│        │       │ src/requests/auth.py:99:0: R0903: Too few public methods (1/2)                       │ (unused-import)                                                                     │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/compat.py:93:0: W0611: Unused getproxies_environment imported from     │
+│        │       │ src/requests/auth.py:116:4: C0116: Missing function or method docstring              │ urllib.request (unused-import)                                                      │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/compat.py:93:0: W0611: Unused parse_http_list imported from            │
+│        │       │ src/requests/auth.py:126:4: R0914: Too many local variables (28/15)                  │ urllib.request (unused-import)                                                      │
+│        │       │ (too-many-locals)                                                                    │ src/requests/compat.py:93:0: W0611: Unused proxy_bypass imported from               │
+│        │       │ src/requests/auth.py:126:4: R0914: Too many local variables (28/15)                  │ urllib.request (unused-import)                                                      │
+│        │       │ (too-many-locals)                                                                    │ src/requests/compat.py:93:0: W0611: Unused proxy_bypass_environment imported from   │
+│        │       │ src/requests/auth.py:143:11: R1714: Consider merging these comparisons with 'in' by  │ urllib.request (unused-import)                                                      │
+│        │       │ using '_algorithm in ('MD5', 'MD5-SESS')'. Use a set instead if elements are         │ src/requests/compat.py:60:4: W0611: Unused simplejson imported as json              │
+│        │       │ hashable. (consider-using-in)                                                        │ (unused-import)                                                                     │
+│        │       │ src/requests/auth.py:176:13: C3001: Lambda expression assigned to a variable. Define │ src/requests/compat.py:64:4: W0611: Unused import json (unused-import)              │
+│        │       │ a function using the "def" keyword instead. (unnecessary-lambda-assignment)          │ src/requests/compat.py:67:4: W0611: Unused JSONDecodeError imported from simplejson │
+│        │       │ src/requests/auth.py:176:13: C3001: Lambda expression assigned to a variable. Define │ (unused-import)                                                                     │
+│        │       │ a function using the "def" keyword instead. (unnecessary-lambda-assignment)          │ src/requests/compat.py:72:0: W0611: Unused OrderedDict imported from collections    │
+│        │       │ src/requests/auth.py:176:8: C0103: Variable name "KD" doesn't conform to snake_case  │ (unused-import)                                                                     │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/compat.py:73:0: W0611: Unused Callable imported from collections.abc   │
+│        │       │ src/requests/auth.py:189:8: C0103: Variable name "A1" doesn't conform to snake_case  │ (unused-import)                                                                     │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/compat.py:73:0: W0611: Unused Mapping imported from collections.abc    │
+│        │       │ src/requests/auth.py:190:8: C0103: Variable name "A2" doesn't conform to snake_case  │ (unused-import)                                                                     │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/compat.py:73:0: W0611: Unused MutableMapping imported from             │
+│        │       │ src/requests/auth.py:192:8: C0103: Variable name "HA1" doesn't conform to snake_case │ collections.abc (unused-import)                                                     │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/compat.py:74:0: W0611: Unused cookiejar imported from http as          │
+│        │       │ src/requests/auth.py:193:8: C0103: Variable name "HA2" doesn't conform to snake_case │ cookielib (unused-import)                                                           │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/compat.py:75:0: W0611: Unused Morsel imported from http.cookies        │
+│        │       │ src/requests/auth.py:207:12: C0103: Variable name "HA1" doesn't conform to           │ (unused-import)                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │ src/requests/compat.py:76:0: W0611: Unused StringIO imported from io                │
+│        │       │ src/requests/auth.py:126:4: R0912: Too many branches (18/12) (too-many-branches)     │ (unused-import)                                                                     │
+│        │       │ src/requests/auth.py:126:4: R0915: Too many statements (66/50) (too-many-statements) │ src/requests/compat.py:81:0: W0611: Unused quote imported from urllib.parse         │
+│        │       │ src/requests/auth.py:126:4: R0912: Too many branches (18/12) (too-many-branches)     │ (unused-import)                                                                     │
+│        │       │ src/requests/auth.py:126:4: R0915: Too many statements (66/50) (too-many-statements) │ src/requests/compat.py:81:0: W0611: Unused quote_plus imported from urllib.parse    │
+│        │       │ src/requests/sessions.py:106:0: C0115: Missing class docstring                       │ (unused-import)                                                                     │
+│        │       │ (missing-class-docstring)                                                            │ src/requests/compat.py:81:0: W0611: Unused unquote imported from urllib.parse       │
+│        │       │ src/requests/sessions.py:159:4: R0913: Too many arguments (9/5) (too-many-arguments) │ (unused-import)                                                                     │
+│        │       │ src/requests/sessions.py:159:4: R0917: Too many positional arguments (9/5)           │ src/requests/compat.py:81:0: W0611: Unused unquote_plus imported from urllib.parse  │
+│        │       │ (too-many-positional-arguments)                                                      │ (unused-import)                                                                     │
+│        │       │ src/requests/sessions.py:159:4: R0914: Too many local variables (20/15)              │ src/requests/compat.py:81:0: W0611: Unused urldefrag imported from urllib.parse     │
+│        │       │ (too-many-locals)                                                                    │ (unused-import)                                                                     │
+│        │       │ src/requests/sessions.py:159:4: R0913: Too many arguments (9/5) (too-many-arguments) │ src/requests/compat.py:81:0: W0611: Unused urlencode imported from urllib.parse     │
+│        │       │ src/requests/sessions.py:159:4: R0917: Too many positional arguments (9/5)           │ (unused-import)                                                                     │
+│        │       │ (too-many-positional-arguments)                                                      │ src/requests/compat.py:81:0: W0611: Unused urljoin imported from urllib.parse       │
+│        │       │ src/requests/sessions.py:159:4: R0914: Too many local variables (20/15)              │ (unused-import)                                                                     │
+│        │       │ (too-many-locals)                                                                    │ src/requests/compat.py:81:0: W0611: Unused urlparse imported from urllib.parse      │
+│        │       │ src/requests/sessions.py:225:16: E1101: Instance of 'LookupDict' has no              │ (unused-import)                                                                     │
+│        │       │ 'temporary_redirect' member (no-member)                                              │ src/requests/compat.py:81:0: W0611: Unused urlsplit imported from urllib.parse      │
+│        │       │ src/requests/sessions.py:225:16: E1101: Instance of 'LookupDict' has no              │ (unused-import)                                                                     │
+│        │       │ 'temporary_redirect' member (no-member)                                              │ src/requests/compat.py:81:0: W0611: Unused urlunparse imported from urllib.parse    │
+│        │       │ src/requests/sessions.py:226:16: E1101: Instance of 'LookupDict' has no              │ (unused-import)                                                                     │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/compat.py:93:0: W0611: Unused getproxies imported from urllib.request  │
+│        │       │ src/requests/sessions.py:226:16: E1101: Instance of 'LookupDict' has no              │ (unused-import)                                                                     │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/compat.py:93:0: W0611: Unused getproxies_environment imported from     │
+│        │       │ src/requests/sessions.py:159:4: R0912: Too many branches (13/12) (too-many-branches) │ urllib.request (unused-import)                                                      │
+│        │       │ src/requests/sessions.py:159:4: R0915: Too many statements (51/50)                   │ src/requests/compat.py:93:0: W0611: Unused parse_http_list imported from            │
+│        │       │ (too-many-statements)                                                                │ urllib.request (unused-import)                                                      │
+│        │       │ src/requests/sessions.py:159:4: R0912: Too many branches (13/12) (too-many-branches) │ src/requests/compat.py:93:0: W0611: Unused proxy_bypass imported from               │
+│        │       │ src/requests/sessions.py:159:4: R0915: Too many statements (51/50)                   │ urllib.request (unused-import)                                                      │
+│        │       │ (too-many-statements)                                                                │ src/requests/compat.py:93:0: W0611: Unused proxy_bypass_environment imported from   │
+│        │       │ src/requests/sessions.py:340:35: E1101: Instance of 'LookupDict' has no 'see_other'  │ urllib.request (unused-import)                                                      │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:41:0: W0622: Redefining built-in 'ConnectionError'           │
+│        │       │ src/requests/sessions.py:340:35: E1101: Instance of 'LookupDict' has no 'see_other'  │ (redefined-builtin)                                                                 │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:41:0: W0622: Redefining built-in 'ConnectionError'           │
+│        │       │ src/requests/sessions.py:345:35: E1101: Instance of 'LookupDict' has no 'found'      │ (redefined-builtin)                                                                 │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:387:8: W0212: Access to a protected member _cookies of a     │
+│        │       │ src/requests/sessions.py:345:35: E1101: Instance of 'LookupDict' has no 'found'      │ client class (protected-access)                                                     │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:390:8: W0212: Access to a protected member _body_position of │
+│        │       │ src/requests/sessions.py:350:35: E1101: Instance of 'LookupDict' has no 'moved'      │ a client class (protected-access)                                                   │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:406:12: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ src/requests/sessions.py:350:35: E1101: Instance of 'LookupDict' has no 'moved'      │ Exception as exc' and 'raise UnicodeError from exc' (raise-missing-from)            │
+│        │       │ member (no-member)                                                                   │ src/requests/models.py:406:12: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ src/requests/sessions.py:356:0: R0902: Too many instance attributes (12/7)           │ Exception as exc' and 'raise UnicodeError from exc' (raise-missing-from)            │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/models.py:435:12: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/sessions.py:356:0: R0902: Too many instance attributes (12/7)           │ InvalidURL(*e.args) from e' (raise-missing-from)                                    │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/models.py:435:12: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/sessions.py:500:4: R0913: Too many arguments (17/5)                     │ InvalidURL(*e.args) from e' (raise-missing-from)                                    │
+│        │       │ (too-many-arguments)                                                                 │ src/requests/models.py:454:16: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ src/requests/sessions.py:500:4: R0917: Too many positional arguments (17/5)          │ UnicodeError as exc' and 'raise InvalidURL('URL has an invalid label.') from exc'   │
+│        │       │ (too-many-positional-arguments)                                                      │ (raise-missing-from)                                                                │
+│        │       │ src/requests/sessions.py:500:4: R0914: Too many local variables (22/15)              │ src/requests/models.py:454:16: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ (too-many-locals)                                                                    │ UnicodeError as exc' and 'raise InvalidURL('URL has an invalid label.') from exc'   │
+│        │       │ src/requests/sessions.py:500:4: R0913: Too many arguments (17/5)                     │ (raise-missing-from)                                                                │
+│        │       │ (too-many-arguments)                                                                 │ src/requests/models.py:512:16: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/sessions.py:500:4: R0917: Too many positional arguments (17/5)          │ InvalidJSONError(ve, request=self) from ve' (raise-missing-from)                    │
+│        │       │ (too-many-positional-arguments)                                                      │ src/requests/models.py:512:16: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/sessions.py:500:4: R0914: Too many local variables (22/15)              │ InvalidJSONError(ve, request=self) from ve' (raise-missing-from)                    │
+│        │       │ (too-many-locals)                                                                    │ src/requests/models.py:588:33: W0613: Unused argument 'url' (unused-argument)       │
+│        │       │ src/requests/sessions.py:724:22: R1721: Unnecessary use of a comprehension, use      │ src/requests/models.py:588:33: W0613: Unused argument 'url' (unused-argument)       │
+│        │       │ list(gen) instead. (unnecessary-comprehension)                                       │ src/requests/models.py:715:12: W0104: Statement seems to have no effect             │
+│        │       │ src/requests/sessions.py:750:4: R0913: Too many arguments (6/5) (too-many-arguments) │ (pointless-statement)                                                               │
+│        │       │ src/requests/sessions.py:750:4: R0917: Too many positional arguments (6/5)           │ src/requests/models.py:822:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ (too-many-positional-arguments)                                                      │ ChunkedEncodingError(e) from e' (raise-missing-from)                                │
+│        │       │ src/requests/sessions.py:750:4: R0913: Too many arguments (6/5) (too-many-arguments) │ src/requests/models.py:822:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/sessions.py:750:4: R0917: Too many positional arguments (6/5)           │ ChunkedEncodingError(e) from e' (raise-missing-from)                                │
+│        │       │ (too-many-positional-arguments)                                                      │ src/requests/models.py:824:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/hooks.py:15:0: C0116: Missing function or method docstring              │ ContentDecodingError(e) from e' (raise-missing-from)                                │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/models.py:824:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:23:4: C0103: Constant name "is_urllib3_1" doesn't conform to  │ ContentDecodingError(e) from e' (raise-missing-from)                                │
+│        │       │ UPPER_CASE naming style (invalid-name)                                               │ src/requests/models.py:826:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:58:0: C0103: Constant name "has_simplejson" doesn't conform   │ ConnectionError(e) from e' (raise-missing-from)                                     │
+│        │       │ to UPPER_CASE naming style (invalid-name)                                            │ src/requests/models.py:826:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:62:4: C0103: Constant name "has_simplejson" doesn't conform   │ ConnectionError(e) from e' (raise-missing-from)                                     │
+│        │       │ to UPPER_CASE naming style (invalid-name)                                            │ src/requests/models.py:828:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:67:4: E0401: Unable to import 'simplejson' (import-error)     │ RequestsSSLError(e) from e' (raise-missing-from)                                    │
+│        │       │ src/requests/compat.py:67:4: E0401: Unable to import 'simplejson' (import-error)     │ src/requests/models.py:828:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:72:0: C0413: Import "from collections import OrderedDict"     │ RequestsSSLError(e) from e' (raise-missing-from)                                    │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/models.py:971:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:72:0: C0413: Import "from collections import OrderedDict"     │ RequestsJSONDecodeError(e.msg, e.doc, e.pos) from e' (raise-missing-from)           │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/models.py:971:20: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ src/requests/compat.py:73:0: C0413: Import "from collections.abc import Callable,    │ RequestsJSONDecodeError(e.msg, e.doc, e.pos) from e' (raise-missing-from)           │
+│        │       │ Mapping, MutableMapping" should be placed at the top of the module                   │ src/requests/models.py:978:12: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ (wrong-import-position)                                                              │ RequestsJSONDecodeError(e.msg, e.doc, e.pos) from e' (raise-missing-from)           │
+│        │       │ src/requests/compat.py:73:0: C0413: Import "from collections.abc import Callable,    │ src/requests/models.py:978:12: W0707: Consider explicitly re-raising using 'raise   │
+│        │       │ Mapping, MutableMapping" should be placed at the top of the module                   │ RequestsJSONDecodeError(e.msg, e.doc, e.pos) from e' (raise-missing-from)           │
+│        │       │ (wrong-import-position)                                                              │ src/requests/models.py:13:0: W0611: Unused import encodings.idna (unused-import)    │
+│        │       │ src/requests/compat.py:74:0: C0413: Import "from http import cookiejar as cookielib" │ src/requests/models.py:13:0: W0611: Unused import encodings.idna (unused-import)    │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/status_codes.py:120:4: W0622: Redefining built-in '__doc__'            │
+│        │       │ src/requests/compat.py:74:0: C0413: Import "from http import cookiejar as cookielib" │ (redefined-builtin)                                                                 │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/status_codes.py:120:4: W0603: Using the global statement               │
+│        │       │ src/requests/compat.py:75:0: C0413: Import "from http.cookies import Morsel" should  │ (global-statement)                                                                  │
+│        │       │ be placed at the top of the module (wrong-import-position)                           │ src/requests/status_codes.py:120:4: W0622: Redefining built-in '__doc__'            │
+│        │       │ src/requests/compat.py:75:0: C0413: Import "from http.cookies import Morsel" should  │ (redefined-builtin)                                                                 │
+│        │       │ be placed at the top of the module (wrong-import-position)                           │ src/requests/status_codes.py:120:4: W0603: Using the global statement               │
+│        │       │ src/requests/compat.py:76:0: C0413: Import "from io import StringIO" should be       │ (global-statement)                                                                  │
+│        │       │ placed at the top of the module (wrong-import-position)                              │ src/requests/api.py:73:11: W3101: Missing timeout argument for method 'request' can │
+│        │       │ src/requests/compat.py:76:0: C0413: Import "from io import StringIO" should be       │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ placed at the top of the module (wrong-import-position)                              │ src/requests/api.py:73:11: W3101: Missing timeout argument for method 'request' can │
+│        │       │ src/requests/compat.py:81:0: C0413: Import "from urllib.parse import quote,          │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ quote_plus, unquote, unquote_plus, urldefrag, urlencode, urljoin, urlparse,          │ src/requests/api.py:85:11: W3101: Missing timeout argument for method 'request' can │
+│        │       │ urlsplit, urlunparse" should be placed at the top of the module                      │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ (wrong-import-position)                                                              │ src/requests/api.py:85:11: W3101: Missing timeout argument for method 'request' can │
+│        │       │ src/requests/compat.py:81:0: C0413: Import "from urllib.parse import quote,          │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ quote_plus, unquote, unquote_plus, urldefrag, urlencode, urljoin, urlparse,          │ src/requests/api.py💯11: W3101: Missing timeout argument for method 'request' can   │
+│        │       │ urlsplit, urlunparse" should be placed at the top of the module                      │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ (wrong-import-position)                                                              │ src/requests/api.py💯11: W3101: Missing timeout argument for method 'request' can   │
+│        │       │ src/requests/compat.py:93:0: C0413: Import "from urllib.request import getproxies,   │ cause your program to hang indefinitely (missing-timeout)                           │
+│        │       │ getproxies_environment, parse_http_list, proxy_bypass, proxy_bypass_environment"     │ src/requests/api.py:115:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ src/requests/compat.py:93:0: C0413: Import "from urllib.request import getproxies,   │ src/requests/api.py:115:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ getproxies_environment, parse_http_list, proxy_bypass, proxy_bypass_environment"     │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ should be placed at the top of the module (wrong-import-position)                    │ src/requests/api.py:130:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ src/requests/compat.py:101:0: C0103: Class name "builtin_str" doesn't conform to     │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ PascalCase naming style (invalid-name)                                               │ src/requests/api.py:130:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ src/requests/compat.py:102:0: C0103: Class name "str" doesn't conform to PascalCase  │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ naming style (invalid-name)                                                          │ src/requests/api.py:145:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ src/requests/compat.py:103:0: C0103: Class name "bytes" doesn't conform to           │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ PascalCase naming style (invalid-name)                                               │ src/requests/api.py:145:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ src/requests/compat.py:72:0: C0411: standard import "collections.OrderedDict" should │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ be placed before third party import "urllib3.__version__" (wrong-import-order)       │ src/requests/api.py:157:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ src/requests/compat.py:73:0: C0411: standard import "collections.abc.Callable"       │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ should be placed before third party import "urllib3.__version__"                     │ src/requests/api.py:157:11: W3101: Missing timeout argument for method 'request'    │
+│        │       │ (wrong-import-order)                                                                 │ can cause your program to hang indefinitely (missing-timeout)                       │
+│        │       │ src/requests/compat.py:74:0: C0411: standard import "http.cookiejar" should be       │ src/requests/utils.py:34:0: W0622: Redefining built-in 'bytes' (redefined-builtin)  │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ src/requests/utils.py:44:0: W0622: Redefining built-in 'str' (redefined-builtin)    │
+│        │       │ src/requests/compat.py:75:0: C0411: standard import "http.cookies.Morsel" should be  │ src/requests/utils.py:34:0: W0622: Redefining built-in 'bytes' (redefined-builtin)  │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ src/requests/utils.py:44:0: W0622: Redefining built-in 'str' (redefined-builtin)    │
+│        │       │ src/requests/compat.py:76:0: C0411: standard import "io.StringIO" should be placed   │ src/requests/utils.py:652:16: W0707: Consider explicitly re-raising using 'except   │
+│        │       │ before third party import "urllib3.__version__" (wrong-import-order)                 │ ValueError as exc' and 'raise InvalidURL(f"Invalid percent-escape sequence: '{h}'") │
+│        │       │ src/requests/compat.py:81:0: C0411: standard import "urllib.parse.quote" should be   │ from exc' (raise-missing-from)                                                      │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ src/requests/utils.py:652:16: W0707: Consider explicitly re-raising using 'except   │
+│        │       │ src/requests/compat.py:93:0: C0411: standard import "urllib.request.getproxies"      │ ValueError as exc' and 'raise InvalidURL(f"Invalid percent-escape sequence: '{h}'") │
+│        │       │ should be placed before third party import "urllib3.__version__"                     │ from exc' (raise-missing-from)                                                      │
+│        │       │ (wrong-import-order)                                                                 │ src/requests/utils.py:999:18: W0612: Unused variable 'host' (unused-variable)       │
+│        │       │ src/requests/compat.py:72:0: C0411: standard import "collections.OrderedDict" should │ src/requests/utils.py:999:24: W0612: Unused variable 'port' (unused-variable)       │
+│        │       │ be placed before third party import "urllib3.__version__" (wrong-import-order)       │ src/requests/utils.py:999:18: W0612: Unused variable 'host' (unused-variable)       │
+│        │       │ src/requests/compat.py:73:0: C0411: standard import "collections.abc.Callable"       │ src/requests/utils.py:999:24: W0612: Unused variable 'port' (unused-variable)       │
+│        │       │ should be placed before third party import "urllib3.__version__"                     │ src/requests/utils.py:1073:41: W0612: Unused variable 'fragment' (unused-variable)  │
+│        │       │ (wrong-import-order)                                                                 │ src/requests/utils.py:1073:41: W0612: Unused variable 'fragment' (unused-variable)  │
+│        │       │ src/requests/compat.py:74:0: C0411: standard import "http.cookiejar" should be       │ src/requests/utils.py:1090:8: W0212: Access to a protected member _body_position of │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ a client class (protected-access)                                                   │
+│        │       │ src/requests/compat.py:75:0: C0411: standard import "http.cookies.Morsel" should be  │ src/requests/utils.py:1093:22: W0212: Access to a protected member _body_position   │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ of a client class (protected-access)                                                │
+│        │       │ src/requests/compat.py:76:0: C0411: standard import "io.StringIO" should be placed   │ src/requests/utils.py:1095:12: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ before third party import "urllib3.__version__" (wrong-import-order)                 │ OSError as exc' and 'raise UnrewindableBodyError('An error occurred when rewinding  │
+│        │       │ src/requests/compat.py:81:0: C0411: standard import "urllib.parse.quote" should be   │ request body for redirect.') from exc' (raise-missing-from)                         │
+│        │       │ placed before third party import "urllib3.__version__" (wrong-import-order)          │ src/requests/utils.py:1095:12: W0707: Consider explicitly re-raising using 'except  │
+│        │       │ src/requests/compat.py:93:0: C0411: standard import "urllib.request.getproxies"      │ OSError as exc' and 'raise UnrewindableBodyError('An error occurred when rewinding  │
+│        │       │ should be placed before third party import "urllib3.__version__"                     │ request body for redirect.') from exc' (raise-missing-from)                         │
+│        │       │ (wrong-import-order)                                                                 │ src/requests/utils.py:28:0: W0611: Unused HEADER_VALIDATORS imported from           │
+│        │       │ src/requests/models.py:296:0: C0301: Line too long (102/100) (line-too-long)         │ _internal_utils (unused-import)                                                     │
+│        │       │ src/requests/models.py:1:0: C0302: Too many lines in module (1037/1000)              │ src/requests/utils.py:28:0: W0611: Unused to_native_string imported from            │
+│        │       │ (too-many-lines)                                                                     │ _internal_utils (unused-import)                                                     │
+│        │       │ src/requests/models.py:296:0: C0301: Line too long (102/100) (line-too-long)         │ src/requests/utils.py:28:0: W0611: Unused HEADER_VALIDATORS imported from           │
+│        │       │ src/requests/models.py:1:0: C0302: Too many lines in module (1037/1000)              │ _internal_utils (unused-import)                                                     │
+│        │       │ (too-many-lines)                                                                     │ src/requests/utils.py:28:0: W0611: Unused to_native_string imported from            │
+│        │       │ src/requests/models.py:72:4: E1101: Instance of 'LookupDict' has no 'moved' member   │ _internal_utils (unused-import)                                                     │
+│        │       │ (no-member)                                                                          │ src/requests/exceptions.py:59:0: W0622: Redefining built-in 'ConnectionError'       │
+│        │       │ src/requests/models.py:72:4: E1101: Instance of 'LookupDict' has no 'moved' member   │ (redefined-builtin)                                                                 │
+│        │       │ (no-member)                                                                          │ src/requests/exceptions.py:59:0: W0622: Redefining built-in 'ConnectionError'       │
+│        │       │ src/requests/models.py:73:4: E1101: Instance of 'LookupDict' has no 'found' member   │ (redefined-builtin)                                                                 │
+│        │       │ (no-member)                                                                          │ src/requests/adapters.py:686:17: W0511: TODO: Remove this in 3.0.0: see #2811       │
+│        │       │ src/requests/models.py:73:4: E1101: Instance of 'LookupDict' has no 'found' member   │ (fixme)                                                                             │
+│        │       │ (no-member)                                                                          │ src/requests/adapters.py:686:17: W0511: TODO: Remove this in 3.0.0: see #2811       │
+│        │       │ src/requests/models.py:74:4: E1101: Instance of 'LookupDict' has no 'other' member   │ (fixme)                                                                             │
+│        │       │ (no-member)                                                                          │ src/requests/adapters.py:35:0: W0622: Redefining built-in 'ConnectionError'         │
+│        │       │ src/requests/models.py:74:4: E1101: Instance of 'LookupDict' has no 'other' member   │ (redefined-builtin)                                                                 │
+│        │       │ (no-member)                                                                          │ src/requests/adapters.py:35:0: W0622: Redefining built-in 'ConnectionError'         │
+│        │       │ src/requests/models.py:75:4: E1101: Instance of 'LookupDict' has no                  │ (redefined-builtin)                                                                 │
+│        │       │ 'temporary_redirect' member (no-member)                                              │ src/requests/adapters.py:140:4: W0246: Useless parent or super() delegation in      │
+│        │       │ src/requests/models.py:75:4: E1101: Instance of 'LookupDict' has no                  │ method '__init__' (useless-parent-delegation)                                       │
+│        │       │ 'temporary_redirect' member (no-member)                                              │ src/requests/adapters.py:474:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:76:4: E1101: Instance of 'LookupDict' has no                  │ InvalidURL(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/adapters.py:474:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:76:4: E1101: Instance of 'LookupDict' has no                  │ InvalidURL(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/adapters.py:590:8: W0107: Unnecessary pass statement                   │
+│        │       │ src/requests/models.py:84:0: C0115: Missing class docstring                          │ (unnecessary-pass)                                                                  │
+│        │       │ (missing-class-docstring)                                                            │ src/requests/adapters.py:637:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:115:8: R1705: Unnecessary "elif" after "return", remove the   │ InvalidURL(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ leading "el" from "elif" (no-else-return)                                            │ src/requests/adapters.py:637:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:137:4: R0914: Too many local variables (16/15)                │ InvalidURL(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ (too-many-locals)                                                                    │ src/requests/adapters.py:657:16: W0707: Consider explicitly re-raising using        │
+│        │       │ src/requests/models.py:137:4: R0914: Too many local variables (16/15)                │ 'except ValueError as exc' and 'raise ValueError(f'Invalid timeout {timeout}. Pass  │
+│        │       │ (too-many-locals)                                                                    │ a (connect, read) timeout tuple, or a single float to set both timeouts to the same │
+│        │       │ src/requests/models.py:146:8: R1720: Unnecessary "elif" after "raise", remove the    │ value.') from exc' (raise-missing-from)                                             │
+│        │       │ leading "el" from "elif" (no-else-raise)                                             │ src/requests/adapters.py:657:16: W0707: Consider explicitly re-raising using        │
+│        │       │ src/requests/models.py:137:4: R0912: Too many branches (17/12) (too-many-branches)   │ 'except ValueError as exc' and 'raise ValueError(f'Invalid timeout {timeout}. Pass  │
+│        │       │ src/requests/models.py:137:4: R0912: Too many branches (17/12) (too-many-branches)   │ a (connect, read) timeout tuple, or a single float to set both timeouts to the same │
+│        │       │ src/requests/models.py:84:0: R0903: Too few public methods (1/2)                     │ value.') from exc' (raise-missing-from)                                             │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/adapters.py:682:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:84:0: R0903: Too few public methods (1/2)                     │ ConnectionError(err, request=request) from err' (raise-missing-from)                │
+│        │       │ (too-few-public-methods)                                                             │ src/requests/adapters.py:682:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:206:0: C0115: Missing class docstring                         │ ConnectionError(err, request=request) from err' (raise-missing-from)                │
+│        │       │ (missing-class-docstring)                                                            │ src/requests/adapters.py:688:20: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:230:0: R0902: Too many instance attributes (10/7)             │ ConnectTimeout(e, request=request) from e' (raise-missing-from)                     │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/adapters.py:688:20: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:230:0: R0902: Too many instance attributes (10/7)             │ ConnectTimeout(e, request=request) from e' (raise-missing-from)                     │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/adapters.py:691:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:258:4: R0913: Too many arguments (11/5) (too-many-arguments)  │ RetryError(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ src/requests/models.py:258:4: R0917: Too many positional arguments (11/5)            │ src/requests/adapters.py:691:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ (too-many-positional-arguments)                                                      │ RetryError(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ src/requests/models.py:258:4: R0913: Too many arguments (11/5) (too-many-arguments)  │ src/requests/adapters.py:694:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:258:4: R0917: Too many positional arguments (11/5)            │ ProxyError(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ (too-many-positional-arguments)                                                      │ src/requests/adapters.py:694:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:351:4: R0913: Too many arguments (11/5) (too-many-arguments)  │ ProxyError(e, request=request) from e' (raise-missing-from)                         │
+│        │       │ src/requests/models.py:351:4: R0917: Too many positional arguments (11/5)            │ src/requests/adapters.py:698:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ (too-many-positional-arguments)                                                      │ SSLError(e, request=request) from e' (raise-missing-from)                           │
+│        │       │ src/requests/models.py:351:4: R0913: Too many arguments (11/5) (too-many-arguments)  │ src/requests/adapters.py:698:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:351:4: R0917: Too many positional arguments (11/5)            │ SSLError(e, request=request) from e' (raise-missing-from)                           │
+│        │       │ (too-many-positional-arguments)                                                      │ src/requests/adapters.py:700:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:382:4: C0116: Missing function or method docstring            │ ConnectionError(e, request=request) from e' (raise-missing-from)                    │
+│        │       │ (missing-function-docstring)                                                         │ src/requests/adapters.py:700:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:401:8: C0415: Import outside toplevel (idna)                  │ ConnectionError(e, request=request) from e' (raise-missing-from)                    │
+│        │       │ (import-outside-toplevel)                                                            │ src/requests/adapters.py:703:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:401:8: C0415: Import outside toplevel (idna)                  │ ConnectionError(e, request=request) from e' (raise-missing-from)                    │
+│        │       │ (import-outside-toplevel)                                                            │ src/requests/adapters.py:703:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:409:4: R0912: Too many branches (16/12) (too-many-branches)   │ ConnectionError(e, request=request) from e' (raise-missing-from)                    │
+│        │       │ src/requests/models.py:409:4: R0912: Too many branches (16/12) (too-many-branches)   │ src/requests/adapters.py:706:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:494:4: R0912: Too many branches (16/12) (too-many-branches)   │ ProxyError(e) from e' (raise-missing-from)                                          │
+│        │       │ src/requests/models.py:494:4: R0912: Too many branches (16/12) (too-many-branches)   │ src/requests/adapters.py:706:12: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:640:0: R0902: Too many instance attributes (13/7)             │ ProxyError(e) from e' (raise-missing-from)                                          │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/adapters.py:711:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:640:0: R0902: Too many instance attributes (13/7)             │ SSLError(e, request=request) from e' (raise-missing-from)                           │
+│        │       │ (too-many-instance-attributes)                                                       │ src/requests/adapters.py:711:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:780:12: E1101: Instance of 'LookupDict' has no                │ SSLError(e, request=request) from e' (raise-missing-from)                           │
+│        │       │ 'moved_permanently' member (no-member)                                               │ src/requests/adapters.py:713:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:780:12: E1101: Instance of 'LookupDict' has no                │ ReadTimeout(e, request=request) from e' (raise-missing-from)                        │
+│        │       │ 'moved_permanently' member (no-member)                                               │ src/requests/adapters.py:713:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:781:12: E1101: Instance of 'LookupDict' has no                │ ReadTimeout(e, request=request) from e' (raise-missing-from)                        │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/adapters.py:715:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:781:12: E1101: Instance of 'LookupDict' has no                │ InvalidHeader(e, request=request) from e' (raise-missing-from)                      │
+│        │       │ 'permanent_redirect' member (no-member)                                              │ src/requests/adapters.py:715:16: W0707: Consider explicitly re-raising using 'raise │
+│        │       │ src/requests/models.py:792:8: R1705: Unnecessary "else" after "return", remove the   │ InvalidHeader(e, request=request) from e' (raise-missing-from)                      │
+│        │       │ "else" and de-indent the code inside it (no-else-return)                             │ src/requests/adapters.py:10:0: W0611: Unused import socket (unused-import)          │
+│        │       │ src/requests/models.py:839:8: R1720: Unnecessary "elif" after "raise", remove the    │ src/requests/adapters.py:78:4: W0611: Unused import ssl (unused-import)             │
+│        │       │ leading "el" from "elif" (no-else-raise)                                             │ src/requests/adapters.py:10:0: W0611: Unused import socket (unused-import)          │
+│        │       │ src/requests/status_codes.py:118:15: C0209: Formatting a regular string which could  │ src/requests/adapters.py:78:4: W0611: Unused import ssl (unused-import)             │
+│        │       │ be an f-string (consider-using-f-string)                                             │                                                                                     │
+│        │       │ src/requests/packages.py:1:0: C0114: Missing module docstring                        │                                                                                     │
+│        │       │ (missing-module-docstring)                                                           │                                                                                     │
+│        │       │ src/requests/__version__.py:1:0: C0114: Missing module docstring                     │                                                                                     │
+│        │       │ (missing-module-docstring)                                                           │                                                                                     │
+│        │       │ src/requests/api.py:17:0: C0301: Line too long (139/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:23:0: C0301: Line too long (106/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:26:0: C0301: Line too long (133/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:27:0: C0301: Line too long (116/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:28:0: C0301: Line too long (116/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:29:0: C0301: Line too long (123/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:36:0: C0301: Line too long (136/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:43:0: C0301: Line too long (107/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:109:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/api.py:124:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/api.py:139:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/api.py:17:0: C0301: Line too long (139/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:23:0: C0301: Line too long (106/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:26:0: C0301: Line too long (133/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:27:0: C0301: Line too long (116/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:28:0: C0301: Line too long (116/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:29:0: C0301: Line too long (123/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:36:0: C0301: Line too long (136/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:43:0: C0301: Line too long (107/100) (line-too-long)             │                                                                                     │
+│        │       │ src/requests/api.py:109:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/api.py:124:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/api.py:139:0: C0301: Line too long (106/100) (line-too-long)            │                                                                                     │
+│        │       │ src/requests/utils.py:286:0: C0301: Line too long (128/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:287:0: C0301: Line too long (105/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:302:0: C0301: Line too long (117/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:563:0: C0301: Line too long (106/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:920:0: C0301: Line too long (118/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:1:0: C0302: Too many lines in module (1099/1000)               │                                                                                     │
+│        │       │ (too-many-lines)                                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:286:0: C0301: Line too long (128/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:287:0: C0301: Line too long (105/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:302:0: C0301: Line too long (117/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:563:0: C0301: Line too long (106/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:920:0: C0301: Line too long (118/100) (line-too-long)          │                                                                                     │
+│        │       │ src/requests/utils.py:1:0: C0302: Too many lines in module (1099/1000)               │                                                                                     │
+│        │       │ (too-many-lines)                                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:77:4: C0116: Missing function or method docstring              │                                                                                     │
+│        │       │ (missing-function-docstring)                                                         │                                                                                     │
+│        │       │ src/requests/utils.py:79:12: C0415: Import outside toplevel (winreg)                 │                                                                                     │
+│        │       │ (import-outside-toplevel)                                                            │                                                                                     │
+│        │       │ src/requests/utils.py:79:12: C0415: Import outside toplevel (winreg)                 │                                                                                     │
+│        │       │ (import-outside-toplevel)                                                            │                                                                                     │
+│        │       │ src/requests/utils.py:84:12: C0103: Variable name "internetSettings" doesn't conform │                                                                                     │
+│        │       │ to snake_case naming style (invalid-name)                                            │                                                                                     │
+│        │       │ src/requests/utils.py:89:12: C0103: Variable name "proxyEnable" doesn't conform to   │                                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:91:12: C0103: Variable name "proxyOverride" doesn't conform to │                                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py💯8: C0103: Variable name "proxyOverride" doesn't conform to    │                                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:102:8: C0103: Variable name "proxyOverride" doesn't conform to │                                                                                     │
+│        │       │ snake_case naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:115:4: E0102: function already defined line 44                 │                                                                                     │
+│        │       │ (function-redefined)                                                                 │                                                                                     │
+│        │       │ src/requests/utils.py:121:8: R1705: Unnecessary "else" after "return", remove the    │                                                                                     │
+│        │       │ "else" and de-indent the code inside it (no-else-return)                             │                                                                                     │
+│        │       │ src/requests/utils.py:136:0: C0116: Missing function or method docstring             │                                                                                     │
+│        │       │ (missing-function-docstring)                                                         │                                                                                     │
+│        │       │ src/requests/utils.py:136:0: R0912: Too many branches (14/12) (too-many-branches)    │                                                                                     │
+│        │       │ src/requests/utils.py:136:0: R0912: Too many branches (14/12) (too-many-branches)    │                                                                                     │
+│        │       │ src/requests/utils.py:217:8: C0415: Import outside toplevel (netrc.NetrcParseError,  │                                                                                     │
+│        │       │ netrc.netrc) (import-outside-toplevel)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:217:8: C0415: Import outside toplevel (netrc.NetrcParseError,  │                                                                                     │
+│        │       │ netrc.netrc) (import-outside-toplevel)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:207:0: R1710: Either all return statements in a function       │                                                                                     │
+│        │       │ should return an expression, or none of them should.                                 │                                                                                     │
+│        │       │ (inconsistent-return-statements)                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:264:0: R1710: Either all return statements in a function       │                                                                                     │
+│        │       │ should return an expression, or none of them should.                                 │                                                                                     │
+│        │       │ (inconsistent-return-statements)                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:294:15: R1732: Consider using 'with' for resource-allocating   │                                                                                     │
+│        │       │ operations (consider-using-with)                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:542:0: R1710: Either all return statements in a function       │                                                                                     │
+│        │       │ should return an expression, or none of them should.                                 │                                                                                     │
+│        │       │ (inconsistent-return-statements)                                                     │                                                                                     │
+│        │       │ src/requests/utils.py:768:0: R0912: Too many branches (14/12) (too-many-branches)    │                                                                                     │
+│        │       │ src/requests/utils.py:768:0: R0912: Too many branches (14/12) (too-many-branches)    │                                                                                     │
+│        │       │ src/requests/utils.py:835:4: R1705: Unnecessary "else" after "return", remove the    │                                                                                     │
+│        │       │ "else" and de-indent the code inside it (no-else-return)                             │                                                                                     │
+│        │       │ src/requests/utils.py:955:0: C0103: Constant name "_null" doesn't conform to         │                                                                                     │
+│        │       │ UPPER_CASE naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:956:0: C0103: Constant name "_null2" doesn't conform to        │                                                                                     │
+│        │       │ UPPER_CASE naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:957:0: C0103: Constant name "_null3" doesn't conform to        │                                                                                     │
+│        │       │ UPPER_CASE naming style (invalid-name)                                               │                                                                                     │
+│        │       │ src/requests/utils.py:960:0: R0911: Too many return statements (9/6)                 │                                                                                     │
+│        │       │ (too-many-return-statements)                                                         │                                                                                     │
+│        │       │ src/requests/utils.py:960:0: R0911: Too many return statements (9/6)                 │                                                                                     │
+│        │       │ (too-many-return-statements)                                                         │                                                                                     │
+│        │       │ src/requests/structures.py:76:4: C0116: Missing function or method docstring         │                                                                                     │
+│        │       │ (missing-function-docstring)                                                         │                                                                                     │
+│        │       │ src/requests/help.py:50:33: C0209: Formatting a regular string which could be an     │                                                                                     │
+│        │       │ f-string (consider-using-f-string)                                                   │                                                                                     │
+│        │       │ src/requests/help.py:51:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:51:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:52:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:52:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:53:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:53:12: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:55:11: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:55:11: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:57:41: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/help.py:57:41: E1101: Module 'sys' has no 'pypy_version_info' member    │                                                                                     │
+│        │       │ (no-member)                                                                          │                                                                                     │
+│        │       │ src/requests/adapters.py:63:4: C0116: Missing function or method docstring           │                                                                                     │
+│        │       │ (missing-function-docstring)                                                         │                                                                                     │
+│        │       │ src/requests/adapters.py:63:4: C0103: Function name "SOCKSProxyManager" doesn't      │                                                                                     │
+│        │       │ conform to snake_case naming style (invalid-name)                                    │                                                                                     │
+│        │       │ src/requests/adapters.py:87:4: C0103: Constant name "_preloaded_ssl_context" doesn't │                                                                                     │
+│        │       │ conform to UPPER_CASE naming style (invalid-name)                                    │                                                                                     │
+│        │       │ src/requests/adapters.py:143:4: R0913: Too many arguments (7/5) (too-many-arguments) │                                                                                     │
+│        │       │ src/requests/adapters.py:143:4: R0917: Too many positional arguments (7/5)           │                                                                                     │
+│        │       │ (too-many-positional-arguments)                                                      │                                                                                     │
+│        │       │ src/requests/adapters.py:143:4: R0913: Too many arguments (7/5) (too-many-arguments) │                                                                                     │
+│        │       │ src/requests/adapters.py:143:4: R0917: Too many positional arguments (7/5)           │                                                                                     │
+│        │       │ (too-many-positional-arguments)                                                      │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0913: Too many arguments (7/5) (too-many-arguments) │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0917: Too many positional arguments (7/5)           │                                                                                     │
+│        │       │ (too-many-positional-arguments)                                                      │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0913: Too many arguments (7/5) (too-many-arguments) │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0917: Too many positional arguments (7/5)           │                                                                                     │
+│        │       │ (too-many-positional-arguments)                                                      │                                                                                     │
+│        │       │ src/requests/adapters.py:709:12: R1720: Unnecessary "elif" after "raise", remove the │                                                                                     │
+│        │       │ leading "el" from "elif" (no-else-raise)                                             │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0912: Too many branches (19/12) (too-many-branches) │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0915: Too many statements (51/50)                   │                                                                                     │
+│        │       │ (too-many-statements)                                                                │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0912: Too many branches (19/12) (too-many-branches) │                                                                                     │
+│        │       │ src/requests/adapters.py:613:4: R0915: Too many statements (51/50)                   │                                                                                     │
+│        │       │ (too-many-statements)                                                                │                                                                                     │
+│        │       │ src/requests/adapters.py:1:0: R0801: Similar lines in 2 files                        │                                                                                     │
+│        │       │ src/requests/adapters.py:1:0: R0801: Similar lines in 2 files                        │                                                                                     │
+└────────┴───────┴──────────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────┘
+Error: Overall Score (85.2) is below the threshold (100.0).

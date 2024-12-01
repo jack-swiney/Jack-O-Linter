@@ -36,6 +36,6 @@ class Flake8(APIWrapper):
 
         # Process the output
         output = result.stdout.splitlines()
-        self.errors = [line for line in output if "E" in line or "F" in line or "DOC" in line]
-        self.warnings = [line for line in output if "W" in line or "C" in line]
+        self.errors = [line for line in output if "E" in line or "F" in line]
+        self.warnings = [line for line in output if "W" in line or "C" in line or "DOC" in line]
         self._calculate_score(target)
